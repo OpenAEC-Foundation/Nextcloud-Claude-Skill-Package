@@ -3,7 +3,7 @@
 ![Claude Code Ready](https://img.shields.io/badge/Claude_Code-Ready-blue?style=flat-square&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyczQuNDggMTAgMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6IiBmaWxsPSIjZmZmIi8+PC9zdmc+)
 ![Nextcloud 28+](https://img.shields.io/badge/Nextcloud-28+-0082C9?style=flat-square&logo=nextcloud&logoColor=white)
 ![PHP + TypeScript + Vue.js](https://img.shields.io/badge/PHP_+_TypeScript_+_Vue.js-Full_Stack-orange?style=flat-square)
-![Skills](https://img.shields.io/badge/Skills-TBD-lightgrey?style=flat-square)
+![Skills](https://img.shields.io/badge/Skills-24-brightgreen?style=flat-square)
 ![License](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)
 
 **Deterministic Claude AI skills for Nextcloud development — PHP backend, TypeScript/Vue.js frontend, OCS API, WebDAV, and app framework coverage.**
@@ -53,40 +53,17 @@ class MyController extends OCSController {
 
 ---
 
-## Current Progress
+## Skills (24)
 
-| Phase | Status |
-|-------|--------|
-| 1. Setup + Raw Masterplan | IN PROGRESS (50%) |
-| 2. Deep Research | NOT STARTED |
-| 3. Masterplan Refinement | NOT STARTED |
-| 4. Topic-Specific Research | NOT STARTED |
-| 5. Skill Creation | NOT STARTED |
-| 6. Validation | NOT STARTED |
-| 7. Publication | NOT STARTED |
+See [INDEX.md](INDEX.md) for the complete catalog with links.
 
-## Skill Categories
-
-| Category | Description |
-|----------|-------------|
-| `syntax/` | OCS API endpoints, DAV operations, app framework API, Vue.js patterns |
-| `impl/` | App development workflows, deployment, migration |
-| `errors/` | Error diagnosis, debugging patterns, anti-patterns |
-| `core/` | Cross-cutting architecture, configuration, security |
-| `agents/` | Intelligent orchestration for scaffolding and review |
-
-## Tech Coverage (Planned)
-
-| Area | Topics |
-|------|--------|
-| **OCS API** | REST endpoints, user provisioning, shares, capabilities, notifications |
-| **WebDAV** | File operations, PROPFIND, chunked upload, properties |
-| **App Framework** | Controllers, services, entities, mappers, migrations, DI |
-| **Vue.js Frontend** | @nextcloud/vue components, routing, state management |
-| **Authentication** | Login flow v2, app passwords, OAuth2, CSRF |
-| **File Handling** | INode API, storage backends, event listeners |
-| **Collaboration** | Shares, Talk API, activity, notifications |
-| **Administration** | occ commands, config.php, background jobs, logging |
+| Category | Count | Coverage |
+|----------|-------|----------|
+| **core/** | 3 | Architecture, configuration, security model |
+| **syntax/** | 8 | OCS API, WebDAV, controllers, database, events, auth, frontend, file API |
+| **impl/** | 7 | App scaffold, full-stack dev, background jobs, occ, collaboration, testing, file ops |
+| **errors/** | 4 | API errors, app errors, database errors, frontend errors |
+| **agents/** | 2 | Code review validator, app scaffolder |
 
 ## Installation
 
