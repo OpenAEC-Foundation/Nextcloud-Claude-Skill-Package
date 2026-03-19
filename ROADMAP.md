@@ -1,7 +1,7 @@
 # ROADMAP
 
-## Current Phase: Phase 3 — Masterplan Refinement
-## Overall Progress: 0 skills (Phase 3 at 0%)
+## Current Phase: Phase 5 — Skill Creation
+## Overall Progress: 0/24 skills (Phase 5 Batch 1 starting)
 
 ---
 
@@ -11,9 +11,9 @@
 |-------|------|--------|--------|
 | 1 | Setup + Raw Masterplan | COMPLETE (100%) | — |
 | 2 | Deep Research (Vooronderzoek) | COMPLETE (100%) | — |
-| 3 | Masterplan Refinement | NOT STARTED | — |
-| 4 | Topic-Specific Research | NOT STARTED | — |
-| 5 | Skill Creation | NOT STARTED | 0/TBD |
+| 3 | Masterplan Refinement | COMPLETE (100%) | — |
+| 4 | Topic-Specific Research | SKIPPED (vooronderzoek sufficient) | — |
+| 5 | Skill Creation | IN PROGRESS (0%) | 0/24 |
 | 6 | Validation | NOT STARTED | — |
 | 7 | Publication | NOT STARTED | — |
 
@@ -25,10 +25,10 @@
 |----------|-------|--------|
 | nextcloud-core | 3 | NOT STARTED |
 | nextcloud-syntax | 8 | NOT STARTED |
-| nextcloud-impl | 8 | NOT STARTED |
+| nextcloud-impl | 7 | NOT STARTED |
 | nextcloud-errors | 4 | NOT STARTED |
 | nextcloud-agents | 2 | NOT STARTED |
-| **Total** | **25** | **0%** |
+| **Total** | **24** | **0%** |
 
 ---
 
@@ -39,6 +39,8 @@
 | 2026-03-19 | Project initialized — core governance files created, repository structure set up |
 | 2026-03-19 | Phase 1 complete — raw masterplan created with 25 preliminary skills across 10 batches |
 | 2026-03-19 | Phase 2 complete — vooronderzoek with 19 sections covering all NC API surfaces |
+| 2026-03-19 | Phase 3 complete — masterplan refined: 25→24 skills (2 merges, 1 addition), 8 batches, full agent prompts |
+| 2026-03-19 | Phase 4 skipped — vooronderzoek already covers all topics in sufficient depth |
 
 ---
 
