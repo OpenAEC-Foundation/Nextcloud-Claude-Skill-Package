@@ -1,5 +1,9 @@
 # 24 Deterministic Claude AI Skills for Nextcloud
 
+<p align="center">
+  <img src="docs/social-preview.png" alt="24 Deterministic Skills for Nextcloud" width="100%">
+</p>
+
 ![Claude Code Ready](https://img.shields.io/badge/Claude_Code-Ready-blue?style=flat-square&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyczQuNDggMTAgMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6IiBmaWxsPSIjZmZmIi8+PC9zdmc+)
 ![Nextcloud 28+](https://img.shields.io/badge/Nextcloud-28+-0082C9?style=flat-square&logo=nextcloud&logoColor=white)
 ![PHP + TypeScript + Vue.js](https://img.shields.io/badge/PHP_+_TypeScript_+_Vue.js-Full_Stack-orange?style=flat-square)
