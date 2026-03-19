@@ -20,6 +20,11 @@ __pycache__/
 .env
 .venv/
 
+# Private
+PROMPTS.md
+.claude/settings.local.json
+*.code-workspace
+
 # Temp
 *.tmp
 *.bak
