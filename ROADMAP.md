@@ -1,7 +1,7 @@
 # ROADMAP
 
-## Current Phase: Phase 1 — Setup + Raw Masterplan
-## Overall Progress: 0 skills (Phase 1 at 50%)
+## Current Phase: Phase 2 — Deep Research (Vooronderzoek)
+## Overall Progress: 0 skills (Phase 2 at 0%)
 
 ---
 
@@ -9,8 +9,8 @@
 
 | Phase | Name | Status | Skills |
 |-------|------|--------|--------|
-| 1 | Setup + Raw Masterplan | IN PROGRESS (50%) | — |
-| 2 | Deep Research (Vooronderzoek) | NOT STARTED | — |
+| 1 | Setup + Raw Masterplan | COMPLETE (100%) | — |
+| 2 | Deep Research (Vooronderzoek) | IN PROGRESS (0%) | — |
 | 3 | Masterplan Refinement | NOT STARTED | — |
 | 4 | Topic-Specific Research | NOT STARTED | — |
 | 5 | Skill Creation | NOT STARTED | 0/TBD |
@@ -23,12 +23,12 @@
 
 | Category | Count | Status |
 |----------|-------|--------|
-| nextcloud-core | TBD | NOT STARTED |
-| nextcloud-syntax | TBD | NOT STARTED |
-| nextcloud-impl | TBD | NOT STARTED |
-| nextcloud-errors | TBD | NOT STARTED |
-| nextcloud-agents | TBD | NOT STARTED |
-| **Total** | **TBD** | **0%** |
+| nextcloud-core | 3 | NOT STARTED |
+| nextcloud-syntax | 8 | NOT STARTED |
+| nextcloud-impl | 8 | NOT STARTED |
+| nextcloud-errors | 4 | NOT STARTED |
+| nextcloud-agents | 2 | NOT STARTED |
+| **Total** | **25** | **0%** |
 
 ---
 
@@ -37,12 +37,13 @@
 | Date | Event |
 |------|-------|
 | 2026-03-19 | Project initialized — core governance files created, repository structure set up |
+| 2026-03-19 | Phase 1 complete — raw masterplan created with 25 preliminary skills across 10 batches |
 
 ---
 
 ## Next Steps
 
-1. Complete Phase 1 — create raw masterplan (`docs/masterplan/nextcloud-masterplan.md`)
-2. Define preliminary skill inventory based on Nextcloud coverage areas
-3. Begin Phase 2 — deep research (vooronderzoek) on Nextcloud APIs, app framework, and ecosystem
-4. Populate SOURCES.md with verified documentation URLs
+1. Phase 2: Deep research (vooronderzoek) — 3 parallel research agents covering all Nextcloud API surfaces
+2. Output: `docs/research/vooronderzoek-nextcloud.md` (min 2000 words)
+3. After research: Phase 3 masterplan refinement with skill merges/additions/removals
+4. Populate SOURCES.md with verified documentation URLs and dates
