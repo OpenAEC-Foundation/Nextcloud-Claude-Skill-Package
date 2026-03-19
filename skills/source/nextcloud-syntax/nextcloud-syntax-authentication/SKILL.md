@@ -217,7 +217,7 @@ public function updateItem(int $id, string $title): JSONResponse {
 **API clients** use the `OCS-APIRequest: true` header as CSRF alternative:
 ```bash
 curl -X PUT https://cloud.example.com/ocs/v2.php/apps/myapp/api/v1/items/5 \
-  -u username:app-password \
+  -u "$USER:$APP_PASSWORD" \
   -H "OCS-APIRequest: true" \
   -H "Content-Type: application/json" \
   -d '{"title": "Updated"}'

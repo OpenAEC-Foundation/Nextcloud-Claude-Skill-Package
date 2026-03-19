@@ -286,14 +286,14 @@ public function getData(): JSONResponse {
 
 ```bash
 # WRONG -- missing required header
-curl -u user:apppassword \
+curl -u "$USER:$APP_PASSWORD" \
   "https://cloud.example.com/ocs/v2.php/apps/myapp/api/v1/data"
 # Result: Request rejected
 ```
 
 ```bash
 # CORRECT -- include required header
-curl -u user:apppassword \
+curl -u "$USER:$APP_PASSWORD" \
   -H "OCS-APIRequest: true" \
   "https://cloud.example.com/ocs/v2.php/apps/myapp/api/v1/data"
 ```

@@ -4,14 +4,14 @@
 
 **Wrong**:
 ```bash
-curl -u admin:password "https://cloud.example.com/ocs/v2.php/cloud/capabilities"
+curl -u "$USER:$APP_PASSWORD" "https://cloud.example.com/ocs/v2.php/cloud/capabilities"
 ```
 
 **Result**: Server returns an HTML login page instead of API data. The request is treated as a browser request.
 
 **Correct**:
 ```bash
-curl -u admin:password \
+curl -u "$USER:$APP_PASSWORD" \
   -H "OCS-APIRequest: true" \
   "https://cloud.example.com/ocs/v2.php/cloud/capabilities"
 ```
@@ -128,7 +128,7 @@ else:
 **Wrong**:
 ```bash
 # Storing the user's actual password in a config file
-curl -u admin:MyRealPassword123 \
+curl -u "$USER:$APP_PASSWORD" \
   -H "OCS-APIRequest: true" \
   "https://cloud.example.com/ocs/v2.php/cloud/capabilities"
 ```
@@ -138,7 +138,7 @@ curl -u admin:MyRealPassword123 \
 **Correct**:
 ```bash
 # Use an app password obtained via Login Flow v2
-curl -u admin:xxxxx-xxxxx-xxxxx-xxxxx-xxxxx \
+curl -u "$USER:$APP_PASSWORD" \
   -H "OCS-APIRequest: true" \
   "https://cloud.example.com/ocs/v2.php/cloud/capabilities"
 ```
@@ -152,7 +152,7 @@ curl -u admin:xxxxx-xxxxx-xxxxx-xxxxx-xxxxx \
 **Wrong**:
 ```bash
 # Missing shareType
-curl -u admin:app-password \
+curl -u "$USER:$APP_PASSWORD" \
   -H "OCS-APIRequest: true" \
   -X POST \
   -d "path=/Documents/file.pdf" \
@@ -164,7 +164,7 @@ curl -u admin:app-password \
 **Wrong**:
 ```bash
 # User share without shareWith
-curl -u admin:app-password \
+curl -u "$USER:$APP_PASSWORD" \
   -H "OCS-APIRequest: true" \
   -X POST \
   -d "path=/Documents/file.pdf&shareType=0" \
@@ -176,14 +176,14 @@ curl -u admin:app-password \
 **Correct**:
 ```bash
 # User share with all required parameters
-curl -u admin:app-password \
+curl -u "$USER:$APP_PASSWORD" \
   -H "OCS-APIRequest: true" \
   -X POST \
   -d "path=/Documents/file.pdf&shareType=0&shareWith=johndoe&permissions=1" \
   "https://cloud.example.com/ocs/v2.php/apps/files_sharing/api/v1/shares?format=json"
 
 # Public link (shareWith not needed)
-curl -u admin:app-password \
+curl -u "$USER:$APP_PASSWORD" \
   -H "OCS-APIRequest: true" \
   -X POST \
   -d "path=/Documents/file.pdf&shareType=3&permissions=1" \
@@ -199,7 +199,7 @@ curl -u admin:app-password \
 **Wrong**:
 ```bash
 # Giving write permissions on a public link to a file (not folder)
-curl -u admin:app-password \
+curl -u "$USER:$APP_PASSWORD" \
   -H "OCS-APIRequest: true" \
   -X POST \
   -d "path=/Documents/file.pdf&shareType=3&permissions=15" \
@@ -211,14 +211,14 @@ curl -u admin:app-password \
 **Correct**:
 ```bash
 # Read-only public link for files
-curl -u admin:app-password \
+curl -u "$USER:$APP_PASSWORD" \
   -H "OCS-APIRequest: true" \
   -X POST \
   -d "path=/Documents/file.pdf&shareType=3&permissions=1" \
   "https://cloud.example.com/ocs/v2.php/apps/files_sharing/api/v1/shares?format=json"
 
 # Public link with upload for folders
-curl -u admin:app-password \
+curl -u "$USER:$APP_PASSWORD" \
   -H "OCS-APIRequest: true" \
   -X POST \
   -d "path=/Uploads&shareType=3&permissions=5" \
@@ -233,7 +233,7 @@ curl -u admin:app-password \
 
 **Wrong**:
 ```bash
-curl -u admin:app-password \
+curl -u "$USER:$APP_PASSWORD" \
   -H "OCS-APIRequest: true" \
   -X POST \
   -d 'path=/Uploads&shareType=3&permissions=4&attributes=[{"scope":"fileRequest","key":"enabled","value":true}]' \
@@ -244,7 +244,7 @@ curl -u admin:app-password \
 
 **Correct**:
 ```bash
-curl -u admin:app-password \
+curl -u "$USER:$APP_PASSWORD" \
   -H "OCS-APIRequest: true" \
   -X POST \
   -d "path=/Uploads&shareType=3&permissions=4" \
@@ -347,7 +347,7 @@ class ApiController extends OCSController {
 **Wrong**:
 ```bash
 # Fire-and-forget without checking response
-curl -s -u admin:app-password \
+curl -s -u "$USER:$APP_PASSWORD" \
   -H "OCS-APIRequest: true" \
   -X POST \
   -d "path=/file.pdf&shareType=0&shareWith=johndoe" \
@@ -357,7 +357,7 @@ curl -s -u admin:app-password \
 
 **Correct**:
 ```bash
-response=$(curl -s -u admin:app-password \
+response=$(curl -s -u "$USER:$APP_PASSWORD" \
   -H "OCS-APIRequest: true" \
   -X POST \
   -d "path=/file.pdf&shareType=0&shareWith=johndoe&permissions=1" \

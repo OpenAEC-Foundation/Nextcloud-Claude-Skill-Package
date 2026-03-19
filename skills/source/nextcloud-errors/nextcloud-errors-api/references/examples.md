@@ -19,11 +19,11 @@ The `OCS-APIRequest: true` header is missing from the request.
 
 ```bash
 # Before (broken)
-curl -u admin:app-password \
+curl -u "$USER:$APP_PASSWORD" \
   'https://cloud.example.com/ocs/v2.php/cloud/users?format=json'
 
 # After (working)
-curl -u admin:app-password \
+curl -u "$USER:$APP_PASSWORD" \
   -H 'OCS-APIRequest: true' \
   'https://cloud.example.com/ocs/v2.php/cloud/users?format=json'
 ```
@@ -50,7 +50,7 @@ const resp = await axios.get('/ocs/v2.php/cloud/capabilities?format=json', {
 
 ### Symptom
 ```bash
-curl -s -o /dev/null -w "%{http_code}" -u admin:pass \
+curl -s -o /dev/null -w "%{http_code}" -u "$USER:$APP_PASSWORD" \
   -H 'OCS-APIRequest: true' \
   'https://cloud.example.com/ocs/v1.php/cloud/users/nonexistent'
 # Returns: 200
@@ -64,7 +64,7 @@ OCS v1 ALWAYS returns HTTP 200. The actual error is in `ocs.meta.statuscode`.
 
 **Option A (preferred): Switch to v2.**
 ```bash
-curl -s -w "\nHTTP: %{http_code}" -u admin:pass \
+curl -s -w "\nHTTP: %{http_code}" -u "$USER:$APP_PASSWORD" \
   -H 'OCS-APIRequest: true' \
   'https://cloud.example.com/ocs/v2.php/cloud/users/nonexistent?format=json'
 # Returns HTTP 404 with statuscode 404 in body
@@ -93,7 +93,7 @@ if ($ocsStatus !== 100) {  // v1 success = 100, NOT 200
 
 ### Symptom
 ```bash
-curl -u admin:pass -X PROPFIND \
+curl -u "$USER:$APP_PASSWORD" -X PROPFIND \
   'https://cloud.example.com/remote.php/dav/files/Documents/'
 # HTTP 404
 ```
@@ -104,11 +104,11 @@ The username is missing from the DAV path. Nextcloud DAV requires `/remote.php/d
 ### Fix
 ```bash
 # Before (broken) -- missing username
-curl -u admin:pass -X PROPFIND \
+curl -u "$USER:$APP_PASSWORD" -X PROPFIND \
   'https://cloud.example.com/remote.php/dav/files/Documents/'
 
 # After (working) -- username in path
-curl -u admin:pass -X PROPFIND \
+curl -u "$USER:$APP_PASSWORD" -X PROPFIND \
   -H 'Depth: 1' \
   'https://cloud.example.com/remote.php/dav/files/admin/Documents/'
 ```
@@ -119,7 +119,7 @@ curl -u admin:pass -X PROPFIND \
 
 ### Symptom
 ```bash
-curl -u admin:pass -X MKCOL \
+curl -u "$USER:$APP_PASSWORD" -X MKCOL \
   'https://cloud.example.com/remote.php/dav/files/admin/a/b/c'
 # HTTP 409 Conflict
 ```
@@ -131,17 +131,17 @@ WebDAV MKCOL requires all parent directories to exist. Unlike `mkdir -p`, it doe
 
 **Option A: Create directories one level at a time.**
 ```bash
-curl -u admin:pass -X MKCOL \
+curl -u "$USER:$APP_PASSWORD" -X MKCOL \
   'https://cloud.example.com/remote.php/dav/files/admin/a'
-curl -u admin:pass -X MKCOL \
+curl -u "$USER:$APP_PASSWORD" -X MKCOL \
   'https://cloud.example.com/remote.php/dav/files/admin/a/b'
-curl -u admin:pass -X MKCOL \
+curl -u "$USER:$APP_PASSWORD" -X MKCOL \
   'https://cloud.example.com/remote.php/dav/files/admin/a/b/c'
 ```
 
 **Option B: Use PUT with auto-create header (for file uploads only).**
 ```bash
-curl -u admin:pass -X PUT \
+curl -u "$USER:$APP_PASSWORD" -X PUT \
   -H 'X-NC-WebDAV-AutoMkcol: 1' \
   --upload-file localfile.txt \
   'https://cloud.example.com/remote.php/dav/files/admin/a/b/c/file.txt'
@@ -290,7 +290,7 @@ The user's quota is exceeded. The `OC-Total-Length` header triggers a quota chec
 
 ```bash
 # Check quota before starting upload
-curl -u admin:pass -X PROPFIND \
+curl -u "$USER:$APP_PASSWORD" -X PROPFIND \
   -H 'Depth: 0' \
   'https://cloud.example.com/remote.php/dav/files/admin/' \
   -d '<?xml version="1.0"?>

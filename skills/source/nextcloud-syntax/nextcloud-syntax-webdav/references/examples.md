@@ -1,6 +1,6 @@
 # WebDAV curl Examples
 
-All examples use `--user username:app-password` for authentication. Replace `cloud.example.com`, `username`, and `app-password` with actual values.
+All examples use `--user "$USER:$APP_PASSWORD"` for authentication. Set environment variables `USER` and `APP_PASSWORD` before running, and replace `cloud.example.com` with your actual server.
 
 ---
 
@@ -10,7 +10,7 @@ All examples use `--user username:app-password` for authentication. Replace `clo
 
 ```bash
 curl 'https://cloud.example.com/remote.php/dav/files/username/Documents' \
-  --user username:app-password \
+  --user "$USER:$APP_PASSWORD" \
   --request PROPFIND \
   --header 'Depth: 1' \
   --header 'Content-Type: application/xml; charset=utf-8' \
@@ -34,7 +34,7 @@ curl 'https://cloud.example.com/remote.php/dav/files/username/Documents' \
 
 ```bash
 curl 'https://cloud.example.com/remote.php/dav/files/username/Documents/report.pdf' \
-  --user username:app-password \
+  --user "$USER:$APP_PASSWORD" \
   --request PROPFIND \
   --header 'Depth: 0' \
   --data '<?xml version="1.0" encoding="UTF-8"?>
@@ -50,7 +50,7 @@ curl 'https://cloud.example.com/remote.php/dav/files/username/Documents/report.p
 
 ```bash
 curl 'https://cloud.example.com/remote.php/dav/files/username/Documents' \
-  --user username:app-password \
+  --user "$USER:$APP_PASSWORD" \
   --request PROPFIND \
   --header 'Depth: 0' \
   --data '<?xml version="1.0" encoding="UTF-8"?>
@@ -63,7 +63,7 @@ curl 'https://cloud.example.com/remote.php/dav/files/username/Documents' \
 
 ```bash
 curl 'https://cloud.example.com/remote.php/dav/files/username/' \
-  --user username:app-password \
+  --user "$USER:$APP_PASSWORD" \
   --request PROPFIND \
   --header 'Depth: 1' \
   --data '<?xml version="1.0" encoding="UTF-8"?>
@@ -84,7 +84,7 @@ curl 'https://cloud.example.com/remote.php/dav/files/username/' \
 
 ```bash
 curl 'https://cloud.example.com/remote.php/dav/files/username/Documents/report.pdf' \
-  --user username:app-password \
+  --user "$USER:$APP_PASSWORD" \
   --output report.pdf
 ```
 
@@ -92,7 +92,7 @@ curl 'https://cloud.example.com/remote.php/dav/files/username/Documents/report.p
 
 ```bash
 curl 'https://cloud.example.com/remote.php/dav/files/username/Documents/report.pdf' \
-  --user username:app-password \
+  --user "$USER:$APP_PASSWORD" \
   --header 'If-None-Match: "6554c6b8e4b01"' \
   --output report.pdf
 ```
@@ -103,7 +103,7 @@ Returns `304 Not Modified` if the file has not changed.
 
 ```bash
 curl 'https://cloud.example.com/remote.php/dav/files/username/largefile.bin' \
-  --user username:app-password \
+  --user "$USER:$APP_PASSWORD" \
   --header 'Range: bytes=0-1048575' \
   --output first-1mb.bin
 ```
@@ -112,7 +112,7 @@ curl 'https://cloud.example.com/remote.php/dav/files/username/largefile.bin' \
 
 ```bash
 curl 'https://cloud.example.com/remote.php/dav/files/username/ProjectFolder' \
-  --user username:app-password \
+  --user "$USER:$APP_PASSWORD" \
   --header 'Accept: application/zip' \
   --output project.zip
 ```
@@ -125,7 +125,7 @@ curl 'https://cloud.example.com/remote.php/dav/files/username/ProjectFolder' \
 
 ```bash
 curl 'https://cloud.example.com/remote.php/dav/files/username/Documents/newfile.txt' \
-  --user username:app-password \
+  --user "$USER:$APP_PASSWORD" \
   --request PUT \
   --upload-file ./newfile.txt
 ```
@@ -134,7 +134,7 @@ curl 'https://cloud.example.com/remote.php/dav/files/username/Documents/newfile.
 
 ```bash
 curl 'https://cloud.example.com/remote.php/dav/files/username/Documents/important.pdf' \
-  --user username:app-password \
+  --user "$USER:$APP_PASSWORD" \
   --request PUT \
   --upload-file ./important.pdf \
   --header 'X-OC-MTime: 1700000000' \
@@ -145,7 +145,7 @@ curl 'https://cloud.example.com/remote.php/dav/files/username/Documents/importan
 
 ```bash
 curl 'https://cloud.example.com/remote.php/dav/files/username/new/deeply/nested/path/file.txt' \
-  --user username:app-password \
+  --user "$USER:$APP_PASSWORD" \
   --request PUT \
   --upload-file ./file.txt \
   --header 'X-NC-WebDAV-AutoMkcol: 1'
@@ -155,7 +155,7 @@ curl 'https://cloud.example.com/remote.php/dav/files/username/new/deeply/nested/
 
 ```bash
 curl 'https://cloud.example.com/remote.php/dav/files/username/Documents/data.bin' \
-  --user username:app-password \
+  --user "$USER:$APP_PASSWORD" \
   --request PUT \
   --upload-file ./data.bin \
   --header 'X-Hash: sha256' \
@@ -168,7 +168,7 @@ The response includes `X-Hash-SHA256` header with the computed hash.
 
 ```bash
 echo "Hello, Nextcloud!" | curl 'https://cloud.example.com/remote.php/dav/files/username/hello.txt' \
-  --user username:app-password \
+  --user "$USER:$APP_PASSWORD" \
   --request PUT \
   --data-binary @-
 ```
@@ -181,7 +181,7 @@ echo "Hello, Nextcloud!" | curl 'https://cloud.example.com/remote.php/dav/files/
 
 ```bash
 curl 'https://cloud.example.com/remote.php/dav/files/username/NewFolder' \
-  --user username:app-password \
+  --user "$USER:$APP_PASSWORD" \
   --request MKCOL
 ```
 
@@ -189,11 +189,11 @@ curl 'https://cloud.example.com/remote.php/dav/files/username/NewFolder' \
 
 ```bash
 curl 'https://cloud.example.com/remote.php/dav/files/username/Level1' \
-  --user username:app-password \
+  --user "$USER:$APP_PASSWORD" \
   --request MKCOL
 
 curl 'https://cloud.example.com/remote.php/dav/files/username/Level1/Level2' \
-  --user username:app-password \
+  --user "$USER:$APP_PASSWORD" \
   --request MKCOL
 ```
 
@@ -207,7 +207,7 @@ Parent directories MUST exist. Use `X-NC-WebDAV-AutoMkcol: 1` on PUT to auto-cre
 
 ```bash
 curl 'https://cloud.example.com/remote.php/dav/files/username/oldname.txt' \
-  --user username:app-password \
+  --user "$USER:$APP_PASSWORD" \
   --request MOVE \
   --header 'Destination: https://cloud.example.com/remote.php/dav/files/username/newname.txt'
 ```
@@ -216,7 +216,7 @@ curl 'https://cloud.example.com/remote.php/dav/files/username/oldname.txt' \
 
 ```bash
 curl 'https://cloud.example.com/remote.php/dav/files/username/file.txt' \
-  --user username:app-password \
+  --user "$USER:$APP_PASSWORD" \
   --request MOVE \
   --header 'Destination: https://cloud.example.com/remote.php/dav/files/username/archive/file.txt'
 ```
@@ -225,7 +225,7 @@ curl 'https://cloud.example.com/remote.php/dav/files/username/file.txt' \
 
 ```bash
 curl 'https://cloud.example.com/remote.php/dav/files/username/source.txt' \
-  --user username:app-password \
+  --user "$USER:$APP_PASSWORD" \
   --request MOVE \
   --header 'Destination: https://cloud.example.com/remote.php/dav/files/username/target.txt' \
   --header 'Overwrite: F'
@@ -237,7 +237,7 @@ Returns `412 Precondition Failed` if `target.txt` already exists.
 
 ```bash
 curl 'https://cloud.example.com/remote.php/dav/files/username/OldFolder' \
-  --user username:app-password \
+  --user "$USER:$APP_PASSWORD" \
   --request MOVE \
   --header 'Destination: https://cloud.example.com/remote.php/dav/files/username/NewFolder'
 ```
@@ -250,7 +250,7 @@ curl 'https://cloud.example.com/remote.php/dav/files/username/OldFolder' \
 
 ```bash
 curl 'https://cloud.example.com/remote.php/dav/files/username/original.txt' \
-  --user username:app-password \
+  --user "$USER:$APP_PASSWORD" \
   --request COPY \
   --header 'Destination: https://cloud.example.com/remote.php/dav/files/username/copy-of-original.txt'
 ```
@@ -259,7 +259,7 @@ curl 'https://cloud.example.com/remote.php/dav/files/username/original.txt' \
 
 ```bash
 curl 'https://cloud.example.com/remote.php/dav/files/username/source.pdf' \
-  --user username:app-password \
+  --user "$USER:$APP_PASSWORD" \
   --request COPY \
   --header 'Destination: https://cloud.example.com/remote.php/dav/files/username/backup/source.pdf' \
   --header 'Overwrite: F'
@@ -269,7 +269,7 @@ curl 'https://cloud.example.com/remote.php/dav/files/username/source.pdf' \
 
 ```bash
 curl 'https://cloud.example.com/remote.php/dav/files/username/Templates' \
-  --user username:app-password \
+  --user "$USER:$APP_PASSWORD" \
   --request COPY \
   --header 'Destination: https://cloud.example.com/remote.php/dav/files/username/ProjectFromTemplate'
 ```
@@ -282,7 +282,7 @@ curl 'https://cloud.example.com/remote.php/dav/files/username/Templates' \
 
 ```bash
 curl 'https://cloud.example.com/remote.php/dav/files/username/unwanted.txt' \
-  --user username:app-password \
+  --user "$USER:$APP_PASSWORD" \
   --request DELETE
 ```
 
@@ -290,7 +290,7 @@ curl 'https://cloud.example.com/remote.php/dav/files/username/unwanted.txt' \
 
 ```bash
 curl 'https://cloud.example.com/remote.php/dav/files/username/OldProject' \
-  --user username:app-password \
+  --user "$USER:$APP_PASSWORD" \
   --request DELETE
 ```
 
@@ -387,7 +387,7 @@ curl 'https://cloud.example.com/public.php/dav/files/AbCdEfGh/' \
 
 ```bash
 curl 'https://cloud.example.com/public.php/dav/files/AbCdEfGh/shared-doc.pdf' \
-  --user 'anonymous:share-password' \
+  --user 'anonymous:' \
   --output shared-doc.pdf
 ```
 
@@ -395,7 +395,7 @@ curl 'https://cloud.example.com/public.php/dav/files/AbCdEfGh/shared-doc.pdf' \
 
 ```bash
 curl 'https://cloud.example.com/public.php/dav/files/AbCdEfGh/uploaded.txt' \
-  --user 'anonymous:share-password' \
+  --user 'anonymous:' \
   --request PUT \
   --upload-file ./uploaded.txt
 ```
@@ -408,7 +408,7 @@ curl 'https://cloud.example.com/public.php/dav/files/AbCdEfGh/uploaded.txt' \
 
 ```bash
 curl 'https://cloud.example.com/remote.php/dav/trashbin/username/trash/' \
-  --user username:app-password \
+  --user "$USER:$APP_PASSWORD" \
   --request PROPFIND \
   --header 'Depth: 1' \
   --data '<?xml version="1.0" encoding="UTF-8"?>
@@ -425,7 +425,7 @@ curl 'https://cloud.example.com/remote.php/dav/trashbin/username/trash/' \
 
 ```bash
 curl 'https://cloud.example.com/remote.php/dav/trashbin/username/trash/report.pdf.d1700000000' \
-  --user username:app-password \
+  --user "$USER:$APP_PASSWORD" \
   --request MOVE \
   --header 'Destination: https://cloud.example.com/remote.php/dav/trashbin/username/restore/report.pdf'
 ```
@@ -434,7 +434,7 @@ curl 'https://cloud.example.com/remote.php/dav/trashbin/username/trash/report.pd
 
 ```bash
 curl 'https://cloud.example.com/remote.php/dav/trashbin/username/trash/report.pdf.d1700000000' \
-  --user username:app-password \
+  --user "$USER:$APP_PASSWORD" \
   --request DELETE
 ```
 
@@ -446,7 +446,7 @@ curl 'https://cloud.example.com/remote.php/dav/trashbin/username/trash/report.pd
 
 ```bash
 curl 'https://cloud.example.com/remote.php/dav/versions/username/versions/12345/' \
-  --user username:app-password \
+  --user "$USER:$APP_PASSWORD" \
   --request PROPFIND \
   --header 'Depth: 1' \
   --data '<?xml version="1.0" encoding="UTF-8"?>
@@ -464,7 +464,7 @@ Replace `12345` with the `oc:fileid` from a PROPFIND on the file.
 
 ```bash
 curl 'https://cloud.example.com/remote.php/dav/versions/username/versions/12345/1700000000' \
-  --user username:app-password \
+  --user "$USER:$APP_PASSWORD" \
   --request COPY \
   --header 'Destination: https://cloud.example.com/remote.php/dav/files/username/Documents/report.pdf'
 ```
@@ -477,7 +477,7 @@ curl 'https://cloud.example.com/remote.php/dav/versions/username/versions/12345/
 
 ```bash
 curl 'https://cloud.example.com/remote.php/dav/files/username/Documents/important.pdf' \
-  --user username:app-password \
+  --user "$USER:$APP_PASSWORD" \
   --request PROPPATCH \
   --header 'Content-Type: application/xml; charset=utf-8' \
   --data '<?xml version="1.0" encoding="UTF-8"?>
@@ -494,7 +494,7 @@ curl 'https://cloud.example.com/remote.php/dav/files/username/Documents/importan
 
 ```bash
 curl 'https://cloud.example.com/remote.php/dav/files/username/Documents/important.pdf' \
-  --user username:app-password \
+  --user "$USER:$APP_PASSWORD" \
   --request PROPPATCH \
   --data '<?xml version="1.0" encoding="UTF-8"?>
     <d:propertyupdate xmlns:d="DAV:" xmlns:oc="http://owncloud.org/ns">

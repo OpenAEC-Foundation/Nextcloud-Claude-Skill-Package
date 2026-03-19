@@ -105,11 +105,11 @@ Nextcloud requires the `OCS-APIRequest: true` header on ALL OCS requests. This h
 
 ```bash
 # WRONG: Missing required header
-curl -u admin:password \
+curl -u "$USER:$APP_PASSWORD" \
   'https://cloud.example.com/ocs/v2.php/cloud/capabilities'
 
 # CORRECT: Header included
-curl -u admin:password \
+curl -u "$USER:$APP_PASSWORD" \
   -H 'OCS-APIRequest: true' \
   'https://cloud.example.com/ocs/v2.php/cloud/capabilities'
 ```
@@ -203,7 +203,7 @@ curl -X POST https://cloud.example.com/login/v2/poll \
   -d "token=<poll-token>"
 
 # Step 4: Use returned appPassword for all subsequent requests
-curl -u "loginName:appPassword" \
+curl -u "$USER:$APP_PASSWORD" \
   -H 'OCS-APIRequest: true' \
   'https://cloud.example.com/ocs/v2.php/cloud/capabilities'
 ```

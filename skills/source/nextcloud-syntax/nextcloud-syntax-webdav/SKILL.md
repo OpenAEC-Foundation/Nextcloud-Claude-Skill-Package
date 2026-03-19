@@ -114,7 +114,7 @@ metadata:
 
 ```bash
 curl 'https://cloud.example.com/remote.php/dav/files/username/Documents' \
-  --user username:app-password \
+  --user "$USER:$APP_PASSWORD" \
   --request PROPFIND \
   --header 'Depth: 1' \
   --data '<?xml version="1.0" encoding="UTF-8"?>
@@ -137,7 +137,7 @@ Response is a `207 Multi-Status` XML with one `<d:response>` per item. The first
 
 ```bash
 curl 'https://cloud.example.com/remote.php/dav/files/username/report.pdf' \
-  --user username:app-password \
+  --user "$USER:$APP_PASSWORD" \
   --request PUT \
   --upload-file ./report.pdf \
   --header 'X-OC-MTime: 1700000000' \
@@ -151,7 +151,7 @@ The `X-NC-WebDAV-AutoMkcol: 1` header auto-creates any missing parent directorie
 
 ```bash
 curl 'https://cloud.example.com/remote.php/dav/files/username/old-name.txt' \
-  --user username:app-password \
+  --user "$USER:$APP_PASSWORD" \
   --request MOVE \
   --header 'Destination: https://cloud.example.com/remote.php/dav/files/username/subfolder/new-name.txt' \
   --header 'Overwrite: F'
@@ -165,7 +165,7 @@ Three-step protocol for reliable large file uploads:
 
 **Step 1: Create upload directory**
 ```bash
-curl -X MKCOL --user username:app-password \
+curl -X MKCOL --user "$USER:$APP_PASSWORD" \
   'https://cloud.example.com/remote.php/dav/uploads/username/myapp-unique-upload-id' \
   --header 'Destination: https://cloud.example.com/remote.php/dav/files/username/dest/largefile.zip'
 ```
@@ -173,14 +173,14 @@ curl -X MKCOL --user username:app-password \
 **Step 2: Upload chunks (5MB-5GB each)**
 ```bash
 # Chunk 1
-curl -X PUT --user username:app-password \
+curl -X PUT --user "$USER:$APP_PASSWORD" \
   'https://cloud.example.com/remote.php/dav/uploads/username/myapp-unique-upload-id/00001' \
   --data-binary @chunk1.bin \
   --header 'Destination: https://cloud.example.com/remote.php/dav/files/username/dest/largefile.zip' \
   --header 'OC-Total-Length: 52428800'
 
 # Chunk 2
-curl -X PUT --user username:app-password \
+curl -X PUT --user "$USER:$APP_PASSWORD" \
   'https://cloud.example.com/remote.php/dav/uploads/username/myapp-unique-upload-id/00002' \
   --data-binary @chunk2.bin \
   --header 'Destination: https://cloud.example.com/remote.php/dav/files/username/dest/largefile.zip' \
@@ -189,7 +189,7 @@ curl -X PUT --user username:app-password \
 
 **Step 3: Assemble file (MOVE .file)**
 ```bash
-curl -X MOVE --user username:app-password \
+curl -X MOVE --user "$USER:$APP_PASSWORD" \
   'https://cloud.example.com/remote.php/dav/uploads/username/myapp-unique-upload-id/.file' \
   --header 'Destination: https://cloud.example.com/remote.php/dav/files/username/dest/largefile.zip' \
   --header 'OC-Total-Length: 52428800' \
@@ -209,7 +209,7 @@ curl 'https://cloud.example.com/public.php/dav/files/SHARE_TOKEN/' \
 
 # Public share with password
 curl 'https://cloud.example.com/public.php/dav/files/SHARE_TOKEN/' \
-  --user 'anonymous:share-password' \
+  --user 'anonymous:' \
   --request PROPFIND \
   --header 'Depth: 1' \
   --data '<?xml version="1.0"?><d:propfind xmlns:d="DAV:"><d:prop><d:resourcetype/></d:prop></d:propfind>'
@@ -221,7 +221,7 @@ Password-protected shares use basic auth with username `anonymous` and the share
 
 ```bash
 curl 'https://cloud.example.com/remote.php/dav/files/username/ProjectFolder' \
-  --user username:app-password \
+  --user "$USER:$APP_PASSWORD" \
   --header 'Accept: application/zip' \
   --output project.zip
 ```

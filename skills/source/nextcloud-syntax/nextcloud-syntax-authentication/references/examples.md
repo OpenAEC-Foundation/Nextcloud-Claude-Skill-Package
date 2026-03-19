@@ -123,7 +123,7 @@ class ExternalApiController extends OCSController {
 
     /**
      * External clients call this with:
-     *   curl -u loginName:appPassword \
+     *   curl -u "$USER:$APP_PASSWORD" \
      *     -H "OCS-APIRequest: true" \
      *     https://cloud.example.com/ocs/v2.php/apps/myapp/api/v1/data
      *

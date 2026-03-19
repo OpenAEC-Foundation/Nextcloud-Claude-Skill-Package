@@ -7,7 +7,7 @@
 ```bash
 curl -X POST "https://cloud.example.com/ocs/v2.php/apps/files_sharing/api/v1/shares" \
   -H "OCS-APIRequest: true" \
-  -u admin:password \
+  -u "$USER:$APP_PASSWORD" \
   -d "path=/Documents/report.pdf" \
   -d "shareType=0" \
   -d "shareWith=john" \
@@ -37,7 +37,7 @@ Response (HTTP 200):
 ```bash
 curl -X POST "https://cloud.example.com/ocs/v2.php/apps/files_sharing/api/v1/shares" \
   -H "OCS-APIRequest: true" \
-  -u admin:password \
+  -u "$USER:$APP_PASSWORD" \
   -d "path=/Documents/report.pdf" \
   -d "shareType=3" \
   -d "password=SecurePass123!" \
@@ -66,7 +66,7 @@ Response includes `token` and `url`:
 ```bash
 curl -X POST "https://cloud.example.com/ocs/v2.php/apps/files_sharing/api/v1/shares" \
   -H "OCS-APIRequest: true" \
-  -u admin:password \
+  -u "$USER:$APP_PASSWORD" \
   -d "path=/Documents/report.pdf" \
   -d "shareType=4" \
   -d "shareWith=external@example.com" \
@@ -78,7 +78,7 @@ curl -X POST "https://cloud.example.com/ocs/v2.php/apps/files_sharing/api/v1/sha
 ```bash
 curl -X GET "https://cloud.example.com/ocs/v2.php/apps/files_sharing/api/v1/shares?path=/Documents/report.pdf" \
   -H "OCS-APIRequest: true" \
-  -u admin:password
+  -u "$USER:$APP_PASSWORD"
 ```
 
 ### Update a Share (Change Permissions)
@@ -86,7 +86,7 @@ curl -X GET "https://cloud.example.com/ocs/v2.php/apps/files_sharing/api/v1/shar
 ```bash
 curl -X PUT "https://cloud.example.com/ocs/v2.php/apps/files_sharing/api/v1/shares/42" \
   -H "OCS-APIRequest: true" \
-  -u admin:password \
+  -u "$USER:$APP_PASSWORD" \
   -d "permissions=1"
 ```
 
@@ -95,7 +95,7 @@ curl -X PUT "https://cloud.example.com/ocs/v2.php/apps/files_sharing/api/v1/shar
 ```bash
 curl -X DELETE "https://cloud.example.com/ocs/v2.php/apps/files_sharing/api/v1/shares/42" \
   -H "OCS-APIRequest: true" \
-  -u admin:password
+  -u "$USER:$APP_PASSWORD"
 ```
 
 ### Share with Download Disabled
@@ -103,7 +103,7 @@ curl -X DELETE "https://cloud.example.com/ocs/v2.php/apps/files_sharing/api/v1/s
 ```bash
 curl -X POST "https://cloud.example.com/ocs/v2.php/apps/files_sharing/api/v1/shares" \
   -H "OCS-APIRequest: true" \
-  -u admin:password \
+  -u "$USER:$APP_PASSWORD" \
   -d "path=/Documents/report.pdf" \
   -d "shareType=3" \
   -d "permissions=1" \

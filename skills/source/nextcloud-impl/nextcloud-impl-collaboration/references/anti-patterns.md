@@ -7,7 +7,7 @@
 **WRONG** -- OCS request without required header:
 ```bash
 curl -X POST "https://cloud.example.com/ocs/v2.php/apps/files_sharing/api/v1/shares" \
-  -u admin:password \
+  -u "$USER:$APP_PASSWORD" \
   -d "path=/file.pdf&shareType=0&shareWith=john"
 ```
 Result: Returns HTML login page instead of JSON/XML response.
@@ -16,7 +16,7 @@ Result: Returns HTML login page instead of JSON/XML response.
 ```bash
 curl -X POST "https://cloud.example.com/ocs/v2.php/apps/files_sharing/api/v1/shares" \
   -H "OCS-APIRequest: true" \
-  -u admin:password \
+  -u "$USER:$APP_PASSWORD" \
   -d "path=/file.pdf&shareType=0&shareWith=john"
 ```
 
@@ -26,7 +26,7 @@ curl -X POST "https://cloud.example.com/ocs/v2.php/apps/files_sharing/api/v1/sha
 ```bash
 curl "https://cloud.example.com/ocs/v1.php/apps/files_sharing/api/v1/shares" \
   -H "OCS-APIRequest: true" \
-  -u admin:password
+  -u "$USER:$APP_PASSWORD"
 ```
 Result: Returns status code 100 for success instead of 200. Client libraries expecting standard HTTP codes break.
 
@@ -34,7 +34,7 @@ Result: Returns status code 100 for success instead of 200. Client libraries exp
 ```bash
 curl "https://cloud.example.com/ocs/v2.php/apps/files_sharing/api/v1/shares" \
   -H "OCS-APIRequest: true" \
-  -u admin:password
+  -u "$USER:$APP_PASSWORD"
 ```
 
 ### AP-03: Setting shareWith on Public Links

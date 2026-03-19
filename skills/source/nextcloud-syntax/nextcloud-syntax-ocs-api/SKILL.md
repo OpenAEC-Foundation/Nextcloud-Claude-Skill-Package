@@ -132,7 +132,7 @@ Combine with bitwise OR: Read + Create = `1 | 4` = `5`.
 ### Pattern 1: Basic OCS Request (JSON)
 
 ```bash
-curl -u admin:app-password \
+curl -u "$USER:$APP_PASSWORD" \
   -H "OCS-APIRequest: true" \
   -H "Accept: application/json" \
   "https://cloud.example.com/ocs/v2.php/cloud/capabilities"
@@ -141,7 +141,7 @@ curl -u admin:app-password \
 ### Pattern 2: Create a Public Link Share
 
 ```bash
-curl -u admin:app-password \
+curl -u "$USER:$APP_PASSWORD" \
   -H "OCS-APIRequest: true" \
   -H "Content-Type: application/x-www-form-urlencoded" \
   -X POST \
@@ -192,7 +192,7 @@ Accessible at: `/ocs/v2.php/apps/myapp/api/v1/data/42`
 
 ```bash
 # Check if the server supports file sharing
-CAPS=$(curl -s -u admin:app-password \
+CAPS=$(curl -s -u "$USER:$APP_PASSWORD" \
   -H "OCS-APIRequest: true" \
   "https://cloud.example.com/ocs/v1.php/cloud/capabilities?format=json")
 
@@ -205,14 +205,14 @@ echo "$CAPS" | jq '.ocs.data.capabilities.files_sharing'
 ### Pattern 5: Set User Status with Custom Message
 
 ```bash
-curl -u user:app-password \
+curl -u "$USER:$APP_PASSWORD" \
   -H "OCS-APIRequest: true" \
   -H "Content-Type: application/json" \
   -X PUT \
   -d '{"statusType": "away"}' \
   "https://cloud.example.com/ocs/v2.php/apps/user_status/api/v1/user_status/status"
 
-curl -u user:app-password \
+curl -u "$USER:$APP_PASSWORD" \
   -H "OCS-APIRequest: true" \
   -H "Content-Type: application/json" \
   -X PUT \
@@ -224,7 +224,7 @@ curl -u user:app-password \
 
 ```bash
 # Create a file request (upload-only public share)
-curl -u admin:app-password \
+curl -u "$USER:$APP_PASSWORD" \
   -H "OCS-APIRequest: true" \
   -X POST \
   -d "path=/Uploads&shareType=3&permissions=4" \
@@ -232,7 +232,7 @@ curl -u admin:app-password \
   "https://cloud.example.com/ocs/v2.php/apps/files_sharing/api/v1/shares?format=json"
 
 # Create a share with download disabled
-curl -u admin:app-password \
+curl -u "$USER:$APP_PASSWORD" \
   -H "OCS-APIRequest: true" \
   -X POST \
   -d "path=/Documents/secret.pdf&shareType=3&permissions=1" \

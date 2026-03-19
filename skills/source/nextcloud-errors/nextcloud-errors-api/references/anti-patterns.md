@@ -27,10 +27,10 @@ if ($response->getStatusCode() === 200) {
 
 ```bash
 # WRONG
-curl -u admin:pass 'https://cloud.example.com/ocs/v2.php/cloud/capabilities'
+curl -u "$USER:$APP_PASSWORD" 'https://cloud.example.com/ocs/v2.php/cloud/capabilities'
 
 # CORRECT
-curl -u admin:pass -H 'OCS-APIRequest: true' \
+curl -u "$USER:$APP_PASSWORD" -H 'OCS-APIRequest: true' \
   'https://cloud.example.com/ocs/v2.php/cloud/capabilities'
 ```
 
@@ -56,15 +56,15 @@ if (isset($data['capabilities']['files_sharing'])) {
 
 ```bash
 # WRONG: Default XML response requires XML parser
-curl -u admin:pass -H 'OCS-APIRequest: true' \
+curl -u "$USER:$APP_PASSWORD" -H 'OCS-APIRequest: true' \
   'https://cloud.example.com/ocs/v2.php/cloud/capabilities'
 
 # CORRECT: Request JSON format
-curl -u admin:pass -H 'OCS-APIRequest: true' \
+curl -u "$USER:$APP_PASSWORD" -H 'OCS-APIRequest: true' \
   'https://cloud.example.com/ocs/v2.php/cloud/capabilities?format=json'
 
 # ALSO CORRECT: Use Accept header
-curl -u admin:pass \
+curl -u "$USER:$APP_PASSWORD" \
   -H 'OCS-APIRequest: true' \
   -H 'Accept: application/json' \
   'https://cloud.example.com/ocs/v2.php/cloud/capabilities'
@@ -80,11 +80,11 @@ curl -u admin:pass \
 
 ```bash
 # WRONG: No username
-curl -u admin:pass -X PROPFIND \
+curl -u "$USER:$APP_PASSWORD" -X PROPFIND \
   'https://cloud.example.com/remote.php/dav/files/Documents/'
 
 # CORRECT: Username in path
-curl -u admin:pass -X PROPFIND \
+curl -u "$USER:$APP_PASSWORD" -X PROPFIND \
   'https://cloud.example.com/remote.php/dav/files/admin/Documents/'
 ```
 
@@ -94,11 +94,11 @@ curl -u admin:pass -X PROPFIND \
 
 ```bash
 # WRONG: No Destination header
-curl -u admin:pass -X MOVE \
+curl -u "$USER:$APP_PASSWORD" -X MOVE \
   'https://cloud.example.com/remote.php/dav/files/admin/old.txt'
 
 # CORRECT: Full absolute URL in Destination
-curl -u admin:pass -X MOVE \
+curl -u "$USER:$APP_PASSWORD" -X MOVE \
   -H 'Destination: https://cloud.example.com/remote.php/dav/files/admin/new.txt' \
   'https://cloud.example.com/remote.php/dav/files/admin/old.txt'
 ```
@@ -109,12 +109,12 @@ curl -u admin:pass -X MOVE \
 
 ```bash
 # WRONG: May timeout or be rejected
-curl -u admin:pass -X PROPFIND \
+curl -u "$USER:$APP_PASSWORD" -X PROPFIND \
   -H 'Depth: infinity' \
   'https://cloud.example.com/remote.php/dav/files/admin/'
 
 # CORRECT: Use Depth: 1 and paginate or recurse manually
-curl -u admin:pass -X PROPFIND \
+curl -u "$USER:$APP_PASSWORD" -X PROPFIND \
   -H 'Depth: 1' \
   'https://cloud.example.com/remote.php/dav/files/admin/'
 ```
@@ -125,13 +125,13 @@ curl -u admin:pass -X PROPFIND \
 
 ```bash
 # WRONG: Fails with 409 if /a/ or /a/b/ do not exist
-curl -u admin:pass -X MKCOL \
+curl -u "$USER:$APP_PASSWORD" -X MKCOL \
   'https://cloud.example.com/remote.php/dav/files/admin/a/b/c'
 
 # CORRECT: Create parents first
-curl -u admin:pass -X MKCOL '.../admin/a'
-curl -u admin:pass -X MKCOL '.../admin/a/b'
-curl -u admin:pass -X MKCOL '.../admin/a/b/c'
+curl -u "$USER:$APP_PASSWORD" -X MKCOL '.../admin/a'
+curl -u "$USER:$APP_PASSWORD" -X MKCOL '.../admin/a/b'
+curl -u "$USER:$APP_PASSWORD" -X MKCOL '.../admin/a/b/c'
 ```
 
 ### AP-9: Ignoring ETag for Concurrent Edits
@@ -140,12 +140,12 @@ curl -u admin:pass -X MKCOL '.../admin/a/b/c'
 
 ```bash
 # Step 1: Get current ETag
-curl -u admin:pass -X PROPFIND -H 'Depth: 0' \
+curl -u "$USER:$APP_PASSWORD" -X PROPFIND -H 'Depth: 0' \
   'https://cloud.example.com/remote.php/dav/files/admin/document.txt' \
   -d '<?xml version="1.0"?><d:propfind xmlns:d="DAV:"><d:prop><d:getetag/></d:prop></d:propfind>'
 
 # Step 2: Upload with If-Match to prevent overwriting concurrent changes
-curl -u admin:pass -X PUT \
+curl -u "$USER:$APP_PASSWORD" -X PUT \
   -H 'If-Match: "etag-value-from-step-1"' \
   --upload-file updated.txt \
   'https://cloud.example.com/remote.php/dav/files/admin/document.txt'
@@ -162,11 +162,11 @@ curl -u admin:pass -X PUT \
 
 ```bash
 # WRONG: User's login password -- breaks with 2FA, not revocable individually
-curl -u admin:MyLoginPassword123 -H 'OCS-APIRequest: true' \
+curl -u "$USER:MyLoginPassword123" -H 'OCS-APIRequest: true' \
   'https://cloud.example.com/ocs/v2.php/cloud/capabilities'
 
 # CORRECT: App password from Login Flow v2
-curl -u admin:yKTVA4zgxjfivy52WqD8kW3M2pKGQr6srmUXMipRdun \
+curl -u "$USER:$APP_PASSWORD" \
   -H 'OCS-APIRequest: true' \
   'https://cloud.example.com/ocs/v2.php/cloud/capabilities'
 ```

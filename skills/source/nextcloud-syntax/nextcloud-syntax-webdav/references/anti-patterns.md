@@ -6,12 +6,12 @@
 
 ```bash
 # WRONG -- missing Destination header
-curl -X MOVE --user user:pass \
+curl -X MOVE --user "$USER:$APP_PASSWORD" \
   'https://cloud.example.com/remote.php/dav/files/user/file.txt'
 # Result: 400 Bad Request
 
 # CORRECT -- full absolute URL in Destination
-curl -X MOVE --user user:pass \
+curl -X MOVE --user "$USER:$APP_PASSWORD" \
   'https://cloud.example.com/remote.php/dav/files/user/file.txt' \
   --header 'Destination: https://cloud.example.com/remote.php/dav/files/user/renamed.txt'
 ```
@@ -43,13 +43,13 @@ The `Destination` header MUST contain a full absolute URL including scheme, host
 
 ```bash
 # WRONG -- may time out or be rejected on large directories
-curl -X PROPFIND --user user:pass \
+curl -X PROPFIND --user "$USER:$APP_PASSWORD" \
   'https://cloud.example.com/remote.php/dav/files/user/' \
   --header 'Depth: infinity' \
   --data '<d:propfind xmlns:d="DAV:"><d:allprop/></d:propfind>'
 
 # CORRECT -- use Depth: 1 and recurse programmatically
-curl -X PROPFIND --user user:pass \
+curl -X PROPFIND --user "$USER:$APP_PASSWORD" \
   'https://cloud.example.com/remote.php/dav/files/user/Documents' \
   --header 'Depth: 1' \
   --data '<?xml version="1.0"?>
@@ -92,12 +92,12 @@ Missing namespace declarations cause properties to be silently ignored or return
 
 ```bash
 # WRONG -- no integrity verification
-curl -X PUT --user user:pass \
+curl -X PUT --user "$USER:$APP_PASSWORD" \
   'https://cloud.example.com/remote.php/dav/files/user/database-backup.sql' \
   --upload-file ./database-backup.sql
 
 # CORRECT -- checksum for integrity verification
-curl -X PUT --user user:pass \
+curl -X PUT --user "$USER:$APP_PASSWORD" \
   'https://cloud.example.com/remote.php/dav/files/user/database-backup.sql' \
   --upload-file ./database-backup.sql \
   --header 'OC-Checksum: SHA256:a1b2c3d4e5f6...'
@@ -129,22 +129,22 @@ ALWAYS name chunks with zero-padded numbers to ensure correct sorting.
 
 ```bash
 # WRONG -- Destination missing on MKCOL
-curl -X MKCOL --user user:pass \
+curl -X MKCOL --user "$USER:$APP_PASSWORD" \
   'https://cloud.example.com/remote.php/dav/uploads/user/upload-123'
 
 # WRONG -- Destination missing on chunk PUT
-curl -X PUT --user user:pass \
+curl -X PUT --user "$USER:$APP_PASSWORD" \
   'https://cloud.example.com/remote.php/dav/uploads/user/upload-123/00001' \
   --data-binary @chunk1.bin
 
 # CORRECT -- Destination on every request
 DEST="https://cloud.example.com/remote.php/dav/files/user/target.zip"
 
-curl -X MKCOL --user user:pass \
+curl -X MKCOL --user "$USER:$APP_PASSWORD" \
   'https://cloud.example.com/remote.php/dav/uploads/user/upload-123' \
   --header "Destination: $DEST"
 
-curl -X PUT --user user:pass \
+curl -X PUT --user "$USER:$APP_PASSWORD" \
   'https://cloud.example.com/remote.php/dav/uploads/user/upload-123/00001' \
   --data-binary @chunk1.bin \
   --header "Destination: $DEST" \
@@ -159,7 +159,7 @@ curl -X PUT --user user:pass \
 
 ```bash
 # After a failed upload, ALWAYS clean up:
-curl -X DELETE --user user:pass \
+curl -X DELETE --user "$USER:$APP_PASSWORD" \
   'https://cloud.example.com/remote.php/dav/uploads/user/upload-123'
 ```
 
@@ -173,20 +173,20 @@ Upload directories expire after 24 hours, but orphaned directories consume serve
 
 ```bash
 # WRONG -- parent "Level1" does not exist
-curl -X MKCOL --user user:pass \
+curl -X MKCOL --user "$USER:$APP_PASSWORD" \
   'https://cloud.example.com/remote.php/dav/files/user/Level1/Level2/Level3'
 # Result: 409 Conflict
 
 # CORRECT (option 1) -- create parents first
-curl -X MKCOL --user user:pass \
+curl -X MKCOL --user "$USER:$APP_PASSWORD" \
   'https://cloud.example.com/remote.php/dav/files/user/Level1'
-curl -X MKCOL --user user:pass \
+curl -X MKCOL --user "$USER:$APP_PASSWORD" \
   'https://cloud.example.com/remote.php/dav/files/user/Level1/Level2'
-curl -X MKCOL --user user:pass \
+curl -X MKCOL --user "$USER:$APP_PASSWORD" \
   'https://cloud.example.com/remote.php/dav/files/user/Level1/Level2/Level3'
 
 # CORRECT (option 2) -- use AutoMkcol on PUT (files only, not directories)
-curl -X PUT --user user:pass \
+curl -X PUT --user "$USER:$APP_PASSWORD" \
   'https://cloud.example.com/remote.php/dav/files/user/Level1/Level2/Level3/file.txt' \
   --upload-file ./file.txt \
   --header 'X-NC-WebDAV-AutoMkcol: 1'
@@ -225,11 +225,11 @@ ALWAYS parse individual `<d:status>` elements within each `<d:propstat>` block.
 
 ```bash
 # WRONG -- PUT creates files, not directories
-curl -X PUT --user user:pass \
+curl -X PUT --user "$USER:$APP_PASSWORD" \
   'https://cloud.example.com/remote.php/dav/files/user/NewFolder/'
 
 # CORRECT -- use MKCOL for directories
-curl -X MKCOL --user user:pass \
+curl -X MKCOL --user "$USER:$APP_PASSWORD" \
   'https://cloud.example.com/remote.php/dav/files/user/NewFolder'
 ```
 
@@ -242,11 +242,11 @@ curl -X MKCOL --user user:pass \
 ```bash
 # WRONG -- spaces and special characters unencoded
 curl 'https://cloud.example.com/remote.php/dav/files/user/My Documents/file (copy).txt' \
-  --user user:pass
+  --user "$USER:$APP_PASSWORD"
 
 # CORRECT -- URL-encoded path
 curl 'https://cloud.example.com/remote.php/dav/files/user/My%20Documents/file%20(copy).txt' \
-  --user user:pass
+  --user "$USER:$APP_PASSWORD"
 ```
 
 Encode spaces as `%20`, parentheses as `%28`/`%29`, and other special characters per RFC 3986.
@@ -259,7 +259,7 @@ Encode spaces as `%20`, parentheses as `%28`/`%29`, and other special characters
 
 ```bash
 # WRONG -- 500MB file via simple PUT (unreliable, no resume)
-curl -X PUT --user user:pass \
+curl -X PUT --user "$USER:$APP_PASSWORD" \
   'https://cloud.example.com/remote.php/dav/files/user/huge.zip' \
   --upload-file ./huge.zip
 
@@ -278,14 +278,14 @@ Simple PUT has no resume capability. If the connection drops, the entire upload 
 ```bash
 # WRONG -- requires authentication as the sharing user
 curl 'https://cloud.example.com/remote.php/dav/files/sharer/SharedFolder/file.txt' \
-  --user sharer:password
+  --user "$USER:$APP_PASSWORD"
 
 # CORRECT -- use the public share endpoint (NC 29+)
 curl 'https://cloud.example.com/public.php/dav/files/SHARE_TOKEN/file.txt'
 
 # CORRECT -- with password-protected share
 curl 'https://cloud.example.com/public.php/dav/files/SHARE_TOKEN/file.txt' \
-  --user 'anonymous:share-password'
+  --user 'anonymous:'
 ```
 
 Public share access uses `anonymous` as the username with the share password.
