@@ -1,7 +1,7 @@
 # ROADMAP
 
-## Current Phase: Phase 7 — Publication
-## Overall Progress: 24/24 skills (Phase 6+7 in progress)
+## Current Phase: COMPLETE
+## Overall Progress: 24/24 skills — v1.0.0 PUBLISHED
 
 ---
 
@@ -15,7 +15,7 @@
 | 4 | Topic-Specific Research | SKIPPED (vooronderzoek sufficient) | — |
 | 5 | Skill Creation | COMPLETE (100%) | 24/24 |
 | 6 | Validation | COMPLETE (100%) | — |
-| 7 | Publication | IN PROGRESS | — |
+| 7 | Publication | COMPLETE (100%) | — |
 
 ---
 
@@ -43,9 +43,11 @@
 | 2026-03-19 | Phase 4 skipped — vooronderzoek already covers all topics in sufficient depth |
 | 2026-03-19 | Phase 5 complete — all 24 skills created across 8 batches (3 core, 8 syntax, 7 impl, 4 errors, 2 agents) |
 | 2026-03-19 | Phase 6 complete — structural validation passed (24/24 skills, all <500 lines, all 3 reference files) |
+| 2026-03-19 | Phase 7 complete — pushed to GitHub, v1.0.0 release, social preview banner, README landing page, repository topics set |
+| 2026-03-19 | Security fix — replaced placeholder credentials with env variables ($USER:$APP_PASSWORD) to resolve GitGuardian alert |
 
 ---
 
-## Next Steps
+## Project Status: COMPLETE
 
-1. Phase 7: Push to GitHub, create release tag v1.0.0, set repository topics
+All 7 phases finished. v1.0.0 published at https://github.com/OpenAEC-Foundation/Nextcloud-Claude-Skill-Package
