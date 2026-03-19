@@ -53,3 +53,38 @@ Architectural and process decisions with rationale. Each decision is numbered an
 **Context**: Nextcloud evolves rapidly with annual major releases. Older versions have different APIs and patterns.
 **Decision**: All skills target Nextcloud 28+ exclusively. No coverage of deprecated APIs from older versions.
 **Rationale**: NC 28 introduced significant app framework changes including the migration to Vue 3, updated @nextcloud/* packages, and PHP 8.1+ requirement. Supporting older versions would dilute quality and create confusion. Skills covering migration may reference older patterns for context only.
+
+## D-008: Merge Services into Architecture Skill
+**Date**: 2026-03-19
+**Status**: ACTIVE
+**Context**: Phase 3 masterplan refinement — evaluating skill boundaries
+**Decision**: Merge `nextcloud-syntax-services` into `nextcloud-core-architecture`. DI and service layer patterns are architectural, not syntax.
+**Rationale**: Research §10 showed the service layer content is thin and belongs with the architecture overview. Standalone skill would be under 100 lines.
+
+## D-009: Merge Frontend Data into Frontend Skill
+**Date**: 2026-03-19
+**Status**: ACTIVE
+**Context**: Phase 3 masterplan refinement — evaluating skill boundaries
+**Decision**: Merge `nextcloud-syntax-frontend-data` into `nextcloud-syntax-frontend`. Renamed combined skill covers the full frontend story.
+**Rationale**: Research §7+§8 are tightly coupled: Vue components always use @nextcloud/axios, router, initial-state. Splitting creates artificial boundary.
+
+## D-010: Add Authentication Skill
+**Date**: 2026-03-19
+**Status**: ACTIVE
+**Context**: Phase 3 masterplan refinement — research revealed substantial auth content
+**Decision**: Add `nextcloud-syntax-authentication` as new skill. Login Flow v2 (4-step protocol), app passwords, CSRF handling, brute force protection warrant dedicated coverage.
+**Rationale**: Research §6 contains too much content for core-security (which is architectural). Authentication is a distinct API surface developers interact with directly.
+
+## D-011: Merge Notifications into Collaboration Skill
+**Date**: 2026-03-19
+**Status**: ACTIVE
+**Context**: Phase 3 masterplan refinement — evaluating skill boundaries
+**Decision**: Merge `nextcloud-impl-notifications` into `nextcloud-impl-collaboration`. Combined scope fits within 500 lines.
+**Rationale**: Research §13+§14 are complementary collaboration APIs. Notifications are almost always used alongside sharing and activity.
+
+## D-012: Skip Phase 4 Topic Research
+**Date**: 2026-03-19
+**Status**: ACTIVE
+**Context**: Phase 4 evaluation — the vooronderzoek from Phase 2 already covered all 19 topic areas
+**Decision**: Skip Phase 4 (topic-specific research). The vooronderzoek is comprehensive enough for skill creation.
+**Rationale**: The vooronderzoek (364 lines, 19 sections) covers all API surfaces at sufficient depth. Creating redundant per-skill research documents would add overhead without new information. This pattern was also used in the Tauri 2 package.

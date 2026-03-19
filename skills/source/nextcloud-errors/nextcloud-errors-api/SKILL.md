@@ -1,6 +1,10 @@
 ---
 name: nextcloud-errors-api
-description: "Diagnoses and resolves Nextcloud API errors including OCS status code confusion (v1 vs v2), missing OCS-APIRequest header, DAV error responses, HTTP status mapping, authentication failures, and CORS issues. Activates when encountering OCS or WebDAV API errors, debugging response codes, or troubleshooting authentication."
+description: >
+  Use when encountering OCS or WebDAV API errors, debugging response codes, or troubleshooting authentication.
+  Prevents misinterpreting OCS v1 status 100 as error, forgetting OCS-APIRequest header, and ignoring DAV XML error bodies.
+  Covers OCS status code confusion (v1 vs v2), missing OCS-APIRequest header, DAV error responses, HTTP status mapping, authentication failures, and CORS issues.
+  Keywords: OCS error, 997, 998, 999, OCS-APIRequest, DAV error, CORS, 401, 403, HTTP status.
 license: MIT
 compatibility: "Designed for Claude Code. Requires Nextcloud 28+."
 metadata:

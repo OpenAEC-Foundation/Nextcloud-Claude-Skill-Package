@@ -1,6 +1,10 @@
 ---
 name: nextcloud-errors-database
-description: "Diagnoses and resolves Nextcloud database errors including migration failures, query builder mistakes, entity mapping issues, type mismatches, Oracle and Galera cluster constraints, index problems, and table naming violations. Activates when encountering database errors, migration problems, or query failures."
+description: >
+  Use when encountering database errors, migration problems, or query failures.
+  Prevents Oracle 30-char column name violations, missing migration version numbers, and incorrect entity type annotations.
+  Covers migration failures, query builder mistakes, entity mapping issues, type mismatches, Oracle and Galera cluster constraints, index problems, and table naming violations.
+  Keywords: migration error, Oracle, Galera, column name, entity mapping, query builder, type mismatch, index, table prefix.
 license: MIT
 compatibility: "Designed for Claude Code. Requires Nextcloud 28+."
 metadata:

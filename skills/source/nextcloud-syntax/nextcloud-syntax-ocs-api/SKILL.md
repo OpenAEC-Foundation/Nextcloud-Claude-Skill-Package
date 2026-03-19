@@ -1,6 +1,10 @@
 ---
 name: nextcloud-syntax-ocs-api
-description: "Guides Nextcloud OCS REST API including endpoint structure, v1 vs v2 versioning, authentication methods, response envelope format, capabilities discovery, user provisioning, share API endpoints, and user status API. Activates when calling OCS endpoints, creating OCS controllers, handling OCS responses, or implementing share operations."
+description: >
+  Use when calling OCS endpoints, creating OCS controllers, handling OCS responses, or implementing share operations.
+  Prevents v1/v2 status code confusion, missing OCS-APIRequest header, and incorrect response envelope parsing.
+  Covers OCS REST API endpoint structure, v1 vs v2 versioning, authentication methods, response envelope format, capabilities discovery, user provisioning, share API endpoints, and user status API.
+  Keywords: OCS, OCSController, /ocs/v2.php, OCS-APIRequest, capabilities, share API, user provisioning.
 license: MIT
 compatibility: "Designed for Claude Code. Requires Nextcloud 28+."
 metadata:

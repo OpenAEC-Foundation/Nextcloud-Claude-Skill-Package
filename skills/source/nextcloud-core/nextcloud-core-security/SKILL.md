@@ -1,6 +1,10 @@
 ---
 name: nextcloud-core-security
-description: "Guides Nextcloud security model including controller security defaults, middleware chain architecture, Content Security Policy configuration, security attributes overview, and encryption interfaces. Activates when securing Nextcloud apps, configuring CSP, understanding the middleware chain, or implementing security patterns."
+description: >
+  Use when securing Nextcloud apps, configuring CSP, understanding the middleware chain, or implementing security patterns.
+  Prevents missing security attributes on controllers, overly permissive CSP policies, and bypassing middleware chain.
+  Covers controller security defaults, middleware chain architecture, Content Security Policy configuration, security attributes overview, and encryption interfaces.
+  Keywords: CSRF, CSP, middleware, #[NoCSRFRequired], #[NoAdminRequired], #[PublicPage], ContentSecurityPolicy.
 license: MIT
 compatibility: "Designed for Claude Code. Requires Nextcloud 28+."
 metadata:

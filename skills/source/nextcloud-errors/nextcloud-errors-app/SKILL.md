@@ -1,6 +1,10 @@
 ---
 name: nextcloud-errors-app
-description: "Diagnoses and resolves Nextcloud app development errors including namespace and autoloading failures, info.xml validation problems, migration errors, bootstrap timing issues, DI resolution failures, and deprecated API usage. Activates when encountering app registration errors, class not found exceptions, migration failures, or dependency injection problems."
+description: >
+  Use when encountering app registration errors, class not found exceptions, migration failures, or dependency injection problems.
+  Prevents namespace typos causing ClassNotFoundException, incorrect info.xml version constraints, and boot-time service access.
+  Covers namespace and autoloading failures, info.xml validation problems, migration errors, bootstrap timing issues, DI resolution failures, and deprecated API usage.
+  Keywords: ClassNotFoundException, autoload, info.xml, migration error, DI resolution, bootstrap, deprecated API, namespace.
 license: MIT
 compatibility: "Designed for Claude Code. Requires Nextcloud 28+."
 metadata:

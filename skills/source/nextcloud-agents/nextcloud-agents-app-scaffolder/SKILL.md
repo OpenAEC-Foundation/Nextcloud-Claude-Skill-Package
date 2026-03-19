@@ -1,6 +1,10 @@
 ---
 name: nextcloud-agents-app-scaffolder
-description: "Generates complete Nextcloud app structure including PHP backend with controllers, services, entities and mappers, Vue.js frontend with @nextcloud packages, info.xml manifest, routes.php, database migrations, Application.php bootstrap, webpack configuration, and test infrastructure. Activates when generating a new Nextcloud app from scratch, scaffolding app features, or creating a complete app template."
+description: >
+  Use when generating a new Nextcloud app from scratch, scaffolding app features, or creating a complete app template.
+  Prevents incomplete app structures, missing bootstrap registration, and wrong directory conventions.
+  Covers PHP backend with controllers, services, entities and mappers, Vue.js frontend with @nextcloud packages, info.xml manifest, routes.php, database migrations, Application.php bootstrap, webpack configuration, and test infrastructure.
+  Keywords: app generator, scaffold, boilerplate, info.xml, routes.php, Application.php, webpack, app template.
 license: MIT
 compatibility: "Designed for Claude Code. Requires Nextcloud 28+."
 metadata:

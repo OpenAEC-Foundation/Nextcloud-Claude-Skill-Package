@@ -1,6 +1,10 @@
 ---
 name: nextcloud-core-config
-description: "Guides Nextcloud configuration including config.php parameters, IConfig/IAppConfig interfaces, occ config commands, caching setup, proxy configuration, mail settings, and logging configuration. Activates when configuring Nextcloud server, reading/writing app configuration, or troubleshooting config issues."
+description: >
+  Use when configuring Nextcloud server, reading/writing app configuration, or troubleshooting config issues.
+  Prevents direct config.php editing when IAppConfig should be used, and misconfigured caching or proxy settings.
+  Covers config.php parameters, IConfig/IAppConfig interfaces, occ config commands, caching setup, proxy configuration, mail settings, and logging configuration.
+  Keywords: config.php, IConfig, IAppConfig, occ config, APCu, Redis, memcache, trusted_proxies.
 license: MIT
 compatibility: "Designed for Claude Code. Requires Nextcloud 28+."
 metadata:

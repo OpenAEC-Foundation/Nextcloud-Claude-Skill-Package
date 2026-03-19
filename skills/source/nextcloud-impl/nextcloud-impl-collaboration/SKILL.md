@@ -1,6 +1,10 @@
 ---
 name: nextcloud-impl-collaboration
-description: "Guides Nextcloud collaboration APIs including OCS Share API with share types and permissions, notification system with INotificationManager and INotifier, activity stream with IActivityManager, and push notifications. Activates when implementing file sharing, creating notifications, publishing activity events, or building collaboration features."
+description: >
+  Use when implementing file sharing, creating notifications, publishing activity events, or building collaboration features.
+  Prevents incorrect share permission bitmasks, unregistered notifiers, and missing activity providers.
+  Covers OCS Share API with share types and permissions, notification system with INotificationManager and INotifier, activity stream with IActivityManager, and push notifications.
+  Keywords: Share API, INotificationManager, INotifier, IActivityManager, permissions, share type, push notifications, activity.
 license: MIT
 compatibility: "Designed for Claude Code. Requires Nextcloud 28+."
 metadata:

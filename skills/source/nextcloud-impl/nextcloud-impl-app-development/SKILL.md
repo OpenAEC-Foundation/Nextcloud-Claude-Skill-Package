@@ -1,6 +1,10 @@
 ---
 name: nextcloud-impl-app-development
-description: "Guides full-stack Nextcloud app development workflow including creating controllers with routes, implementing service layer with DI, database entities and mappers, Vue.js frontend with @nextcloud packages, initial state bridge between PHP and JavaScript, and the development lifecycle. Activates when building a complete Nextcloud app, connecting PHP backend to Vue.js frontend, or implementing CRUD operations."
+description: >
+  Use when building a complete Nextcloud app, connecting PHP backend to Vue.js frontend, or implementing CRUD operations.
+  Prevents skipping the service layer, tight coupling between controllers and database, and missing initial state bridge.
+  Covers full-stack Nextcloud app development workflow including creating controllers with routes, implementing service layer with DI, database entities and mappers, Vue.js frontend with @nextcloud packages, initial state bridge between PHP and JavaScript, and the development lifecycle.
+  Keywords: full-stack, CRUD, service layer, initial state, routes.php, Vue.js, controller, mapper.
 license: MIT
 compatibility: "Designed for Claude Code. Requires Nextcloud 28+."
 metadata:

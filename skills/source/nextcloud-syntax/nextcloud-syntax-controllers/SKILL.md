@@ -1,6 +1,10 @@
 ---
 name: nextcloud-syntax-controllers
-description: "Guides Nextcloud controller development including Controller and OCSController types, routes.php definition, attribute-based routing, parameter extraction, security attributes, response types, and format negotiation. Activates when creating controllers, defining routes, handling requests, or implementing API endpoints."
+description: >
+  Use when creating controllers, defining routes, handling requests, or implementing API endpoints.
+  Prevents missing security attributes, incorrect route definitions, and wrong response type usage.
+  Covers Controller and OCSController types, routes.php definition, attribute-based routing, parameter extraction, security attributes, response types, and format negotiation.
+  Keywords: Controller, OCSController, routes.php, #[ApiRoute], JSONResponse, DataResponse, parameter extraction.
 license: MIT
 compatibility: "Designed for Claude Code. Requires Nextcloud 28+."
 metadata:

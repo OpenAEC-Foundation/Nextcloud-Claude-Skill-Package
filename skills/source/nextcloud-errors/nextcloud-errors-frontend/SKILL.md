@@ -1,6 +1,10 @@
 ---
 name: nextcloud-errors-frontend
-description: "Diagnoses and resolves Nextcloud frontend errors including Vue/Webpack build failures, @nextcloud/* import path issues, CORS problems, CSRF token failures, missing dialog styles, deprecated OC global usage, version mismatches between @nextcloud packages and Nextcloud server, and initial state loading errors. Activates when encountering frontend build errors, runtime JavaScript errors, or API call failures from the browser."
+description: >
+  Use when encountering frontend build errors, runtime JavaScript errors, or API call failures from the browser.
+  Prevents @nextcloud/* version mismatches with server, using deprecated OC global, and missing CSRF requesttoken.
+  Covers Vue/Webpack build failures, @nextcloud/* import path issues, CORS problems, CSRF token failures, missing dialog styles, deprecated OC global usage, version mismatches between @nextcloud packages and Nextcloud server, and initial state loading errors.
+  Keywords: Webpack error, Vue build, @nextcloud version, OC global, CSRF, requesttoken, initial state, CORS, import path.
 license: MIT
 compatibility: "Designed for Claude Code. Requires Nextcloud 28+."
 metadata:

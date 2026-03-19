@@ -1,6 +1,10 @@
 ---
 name: nextcloud-syntax-frontend
-description: "Guides Nextcloud Vue.js frontend development including @nextcloud/vue component library, @nextcloud/axios HTTP client, @nextcloud/router URL generation, @nextcloud/initial-state data injection, @nextcloud/dialogs toasts and file picker, @nextcloud/files DAV client, Webpack configuration, CSS custom properties, and dark mode support. Activates when building Nextcloud app frontends, using Vue components, making API calls from JavaScript, or styling with Nextcloud design system."
+description: >
+  Use when building Nextcloud app frontends, using Vue components, making API calls from JavaScript, or styling with Nextcloud design system.
+  Prevents importing from wrong @nextcloud/* package versions, missing dark mode support, and bypassing the design system.
+  Covers @nextcloud/vue component library, @nextcloud/axios HTTP client, @nextcloud/router URL generation, @nextcloud/initial-state data injection, @nextcloud/dialogs toasts and file picker, @nextcloud/files DAV client, Webpack configuration, CSS custom properties, and dark mode support.
+  Keywords: @nextcloud/vue, @nextcloud/axios, @nextcloud/router, @nextcloud/initial-state, NcButton, Webpack, Vue.js, dark mode.
 license: MIT
 compatibility: "Designed for Claude Code. Requires Nextcloud 28+."
 metadata:

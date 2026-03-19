@@ -84,4 +84,10 @@ All skills in this package MUST be verified against these approved sources. No o
 
 | Technology | Date | Action | Notes |
 |------------|------|--------|-------|
-| Nextcloud | 2026-03-19 | Initial setup | All URLs pending verification |
+| Nextcloud | 2026-03-19 | Initial setup | Source registry created |
+| Nextcloud Developer Manual | 2026-03-19 | Vooronderzoek research | App framework, controllers, database, events verified |
+| Nextcloud Admin Manual | 2026-03-19 | Vooronderzoek research | config.php, occ commands, background jobs verified |
+| OCS API Documentation | 2026-03-19 | Skill creation | Endpoint structure, v1/v2 differences, response format verified |
+| WebDAV API Documentation | 2026-03-19 | Skill creation | PROPFIND, chunked upload, DAV properties verified |
+| @nextcloud/vue (npm) | 2026-03-19 | Skill creation | Component names, import paths verified for NC 28+ |
+| Nextcloud Server (GitHub) | 2026-03-19 | Skill creation | Source code cross-referenced for controller patterns |

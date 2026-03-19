@@ -1,6 +1,10 @@
 ---
 name: nextcloud-syntax-authentication
-description: "Guides Nextcloud authentication including Login Flow v2 protocol, app passwords, CSRF token handling, rate limiting with UserRateLimit and AnonRateLimit attributes, brute force protection with throttle(), and OAuth2. Activates when implementing authentication, handling CSRF tokens, configuring rate limiting, or integrating external clients via Login Flow v2."
+description: >
+  Use when implementing authentication, handling CSRF tokens, configuring rate limiting, or integrating external clients via Login Flow v2.
+  Prevents hardcoded credentials, missing CSRF tokens on state-changing requests, and insufficient rate limiting.
+  Covers Login Flow v2 protocol, app passwords, CSRF token handling, rate limiting with UserRateLimit and AnonRateLimit attributes, brute force protection with throttle(), and OAuth2.
+  Keywords: Login Flow v2, app password, CSRF, requesttoken, UserRateLimit, AnonRateLimit, throttle, OAuth2.
 license: MIT
 compatibility: "Designed for Claude Code. Requires Nextcloud 28+."
 metadata:

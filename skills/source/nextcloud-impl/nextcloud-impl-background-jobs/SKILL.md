@@ -1,6 +1,10 @@
 ---
 name: nextcloud-impl-background-jobs
-description: "Guides Nextcloud background jobs including QueuedJob for one-time tasks, TimedJob for recurring tasks, IJobList for programmatic management, scheduleAfter for delayed execution, cron configuration modes, time sensitivity, and parallel run control. Activates when implementing background processing, scheduling recurring tasks, or configuring cron."
+description: >
+  Use when implementing background processing, scheduling recurring tasks, or configuring cron.
+  Prevents using AJAX cron in production, missing setInterval in TimedJob constructor, and unhandled job exceptions.
+  Covers QueuedJob for one-time tasks, TimedJob for recurring tasks, IJobList for programmatic management, scheduleAfter for delayed execution, cron configuration modes, time sensitivity, and parallel run control.
+  Keywords: QueuedJob, TimedJob, IJobList, setInterval, scheduleAfter, cron, background job, webcron.
 license: MIT
 compatibility: "Designed for Claude Code. Requires Nextcloud 28+."
 metadata:
