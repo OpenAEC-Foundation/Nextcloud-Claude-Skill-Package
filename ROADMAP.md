@@ -1,7 +1,7 @@
 # ROADMAP
 
-## Current Phase: Phase 2 — Deep Research (Vooronderzoek)
-## Overall Progress: 0 skills (Phase 2 at 0%)
+## Current Phase: Phase 3 — Masterplan Refinement
+## Overall Progress: 0 skills (Phase 3 at 0%)
 
 ---
 
@@ -10,7 +10,7 @@
 | Phase | Name | Status | Skills |
 |-------|------|--------|--------|
 | 1 | Setup + Raw Masterplan | COMPLETE (100%) | — |
-| 2 | Deep Research (Vooronderzoek) | IN PROGRESS (0%) | — |
+| 2 | Deep Research (Vooronderzoek) | COMPLETE (100%) | — |
 | 3 | Masterplan Refinement | NOT STARTED | — |
 | 4 | Topic-Specific Research | NOT STARTED | — |
 | 5 | Skill Creation | NOT STARTED | 0/TBD |
@@ -38,12 +38,13 @@
 |------|-------|
 | 2026-03-19 | Project initialized — core governance files created, repository structure set up |
 | 2026-03-19 | Phase 1 complete — raw masterplan created with 25 preliminary skills across 10 batches |
+| 2026-03-19 | Phase 2 complete — vooronderzoek with 19 sections covering all NC API surfaces |
 
 ---
 
 ## Next Steps
 
-1. Phase 2: Deep research (vooronderzoek) — 3 parallel research agents covering all Nextcloud API surfaces
-2. Output: `docs/research/vooronderzoek-nextcloud.md` (min 2000 words)
-3. After research: Phase 3 masterplan refinement with skill merges/additions/removals
-4. Populate SOURCES.md with verified documentation URLs and dates
+1. Phase 3: Refine masterplan — review research, merge/add/remove skills, write agent prompts
+2. Phase 4: Topic-specific research per skill (if needed)
+3. Phase 5: Skill creation in batches of 3
+4. Phase 6-7: Validation and publication
