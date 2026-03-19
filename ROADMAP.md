@@ -1,7 +1,7 @@
 # ROADMAP
 
 ## Current Phase: Phase 5 — Skill Creation
-## Overall Progress: 0/24 skills (Phase 5 Batch 1 starting)
+## Overall Progress: 6/24 skills (Phase 5 Batch 3 next)
 
 ---
 
@@ -13,7 +13,7 @@
 | 2 | Deep Research (Vooronderzoek) | COMPLETE (100%) | — |
 | 3 | Masterplan Refinement | COMPLETE (100%) | — |
 | 4 | Topic-Specific Research | SKIPPED (vooronderzoek sufficient) | — |
-| 5 | Skill Creation | IN PROGRESS (0%) | 0/24 |
+| 5 | Skill Creation | IN PROGRESS (25%) | 6/24 |
 | 6 | Validation | NOT STARTED | — |
 | 7 | Publication | NOT STARTED | — |
 
@@ -23,8 +23,8 @@
 
 | Category | Count | Status |
 |----------|-------|--------|
-| nextcloud-core | 3 | NOT STARTED |
-| nextcloud-syntax | 8 | NOT STARTED |
+| nextcloud-core | 3 | COMPLETE (3/3) |
+| nextcloud-syntax | 8 | IN PROGRESS (3/8) |
 | nextcloud-impl | 7 | NOT STARTED |
 | nextcloud-errors | 4 | NOT STARTED |
 | nextcloud-agents | 2 | NOT STARTED |
