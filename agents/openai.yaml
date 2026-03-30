@@ -1,0 +1,5 @@
+# OpenAI Codex skill discovery
+name: nextcloud-claude-skill-package
+description: >
+  24 deterministic Claude AI skills for Nextcloud 28+ development. PHP, TypeScript, Vue.js, OCS API, WebDAV, app framework
+skills_directory: ./skills/source

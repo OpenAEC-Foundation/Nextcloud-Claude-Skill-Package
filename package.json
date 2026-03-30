@@ -1,0 +1,39 @@
+{
+  "name": "@openaec/nextcloud-claude-skill-package",
+  "version": "1.1.0",
+  "description": "24 deterministic Claude AI skills for Nextcloud 28+ development — PHP, TypeScript, Vue.js, OCS API, WebDAV, app framework",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OpenAEC-Foundation/Nextcloud-Claude-Skill-Package"
+  },
+  "keywords": ["agent-skills", "agentskills", "claude-skills", "nextcloud", "php", "vue", "webdav", "ocs-api"],
+  "agents": {
+    "skills": [
+      { "name": "nextcloud-agents-app-scaffolder", "path": "./skills/source/nextcloud-agents/nextcloud-agents-app-scaffolder" },
+      { "name": "nextcloud-agents-review", "path": "./skills/source/nextcloud-agents/nextcloud-agents-review" },
+      { "name": "nextcloud-core-architecture", "path": "./skills/source/nextcloud-core/nextcloud-core-architecture" },
+      { "name": "nextcloud-core-config", "path": "./skills/source/nextcloud-core/nextcloud-core-config" },
+      { "name": "nextcloud-core-security", "path": "./skills/source/nextcloud-core/nextcloud-core-security" },
+      { "name": "nextcloud-errors-api", "path": "./skills/source/nextcloud-errors/nextcloud-errors-api" },
+      { "name": "nextcloud-errors-app", "path": "./skills/source/nextcloud-errors/nextcloud-errors-app" },
+      { "name": "nextcloud-errors-database", "path": "./skills/source/nextcloud-errors/nextcloud-errors-database" },
+      { "name": "nextcloud-errors-frontend", "path": "./skills/source/nextcloud-errors/nextcloud-errors-frontend" },
+      { "name": "nextcloud-impl-app-development", "path": "./skills/source/nextcloud-impl/nextcloud-impl-app-development" },
+      { "name": "nextcloud-impl-app-scaffold", "path": "./skills/source/nextcloud-impl/nextcloud-impl-app-scaffold" },
+      { "name": "nextcloud-impl-background-jobs", "path": "./skills/source/nextcloud-impl/nextcloud-impl-background-jobs" },
+      { "name": "nextcloud-impl-collaboration", "path": "./skills/source/nextcloud-impl/nextcloud-impl-collaboration" },
+      { "name": "nextcloud-impl-file-operations", "path": "./skills/source/nextcloud-impl/nextcloud-impl-file-operations" },
+      { "name": "nextcloud-impl-occ-commands", "path": "./skills/source/nextcloud-impl/nextcloud-impl-occ-commands" },
+      { "name": "nextcloud-impl-testing", "path": "./skills/source/nextcloud-impl/nextcloud-impl-testing" },
+      { "name": "nextcloud-syntax-authentication", "path": "./skills/source/nextcloud-syntax/nextcloud-syntax-authentication" },
+      { "name": "nextcloud-syntax-controllers", "path": "./skills/source/nextcloud-syntax/nextcloud-syntax-controllers" },
+      { "name": "nextcloud-syntax-database", "path": "./skills/source/nextcloud-syntax/nextcloud-syntax-database" },
+      { "name": "nextcloud-syntax-events", "path": "./skills/source/nextcloud-syntax/nextcloud-syntax-events" },
+      { "name": "nextcloud-syntax-file-api", "path": "./skills/source/nextcloud-syntax/nextcloud-syntax-file-api" },
+      { "name": "nextcloud-syntax-frontend", "path": "./skills/source/nextcloud-syntax/nextcloud-syntax-frontend" },
+      { "name": "nextcloud-syntax-ocs-api", "path": "./skills/source/nextcloud-syntax/nextcloud-syntax-ocs-api" },
+      { "name": "nextcloud-syntax-webdav", "path": "./skills/source/nextcloud-syntax/nextcloud-syntax-webdav" }
+    ]
+  }
+}
