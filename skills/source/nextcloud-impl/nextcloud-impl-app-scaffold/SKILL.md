@@ -4,7 +4,7 @@ description: >
   Use when creating a new Nextcloud app, setting up info.xml, configuring Application.php, or understanding app directory layout.
   Prevents incorrect info.xml fields, wrong namespace conventions, and missing IBootstrap implementation.
   Covers directory structure conventions, info.xml manifest with all fields and constraints, Application.php with IBootstrap lifecycle, namespace conventions and autoloading, and the official app generator.
-  Keywords: info.xml, Application.php, IBootstrap, app scaffold, namespace, autoloading, app generator, appinfo.
+  Keywords: info.xml, Application.php, IBootstrap, app scaffold, namespace, autoloading, app generator, appinfo, new app setup, directory structure, info.xml guide, app registration..
 license: MIT
 compatibility: "Designed for Claude Code. Requires Nextcloud 28+."
 metadata:

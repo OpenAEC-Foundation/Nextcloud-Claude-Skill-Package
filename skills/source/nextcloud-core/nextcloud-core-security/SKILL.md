@@ -4,7 +4,7 @@ description: >
   Use when securing Nextcloud apps, configuring CSP, understanding the middleware chain, or implementing security patterns.
   Prevents missing security attributes on controllers, overly permissive CSP policies, and bypassing middleware chain.
   Covers controller security defaults, middleware chain architecture, Content Security Policy configuration, security attributes overview, and encryption interfaces.
-  Keywords: CSRF, CSP, middleware, #[NoCSRFRequired], #[NoAdminRequired], #[PublicPage], ContentSecurityPolicy.
+  Keywords: CSRF, CSP, middleware, #[NoCSRFRequired], #[NoAdminRequired], #[PublicPage], ContentSecurityPolicy, CSRF error, security headers, middleware, access control, public page, admin only..
 license: MIT
 compatibility: "Designed for Claude Code. Requires Nextcloud 28+."
 metadata:

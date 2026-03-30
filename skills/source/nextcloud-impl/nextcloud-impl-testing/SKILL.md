@@ -4,7 +4,7 @@ description: >
   Use when writing tests for Nextcloud apps, setting up test infrastructure, or mocking Nextcloud services.
   Prevents missing database transaction rollback in integration tests, incorrect mock setup, and untestable tight coupling.
   Covers PHPUnit setup with TestCase base class, unit testing with mocks, integration testing with DI container, database transaction management, frontend testing with Vue Test Utils, and phpunit.xml configuration.
-  Keywords: PHPUnit, TestCase, createMock, Vue Test Utils, integration test, phpunit.xml, DI container, transaction.
+  Keywords: PHPUnit, TestCase, createMock, Vue Test Utils, integration test, phpunit.xml, DI container, transaction, write tests, unit test, integration test, mock services, test setup, PHPUnit..
 license: MIT
 compatibility: "Designed for Claude Code. Requires Nextcloud 28+."
 metadata:

@@ -4,7 +4,7 @@ description: >
   Use when encountering app registration errors, class not found exceptions, migration failures, or dependency injection problems.
   Prevents namespace typos causing ClassNotFoundException, incorrect info.xml version constraints, and boot-time service access.
   Covers namespace and autoloading failures, info.xml validation problems, migration errors, bootstrap timing issues, DI resolution failures, and deprecated API usage.
-  Keywords: ClassNotFoundException, autoload, info.xml, migration error, DI resolution, bootstrap, deprecated API, namespace.
+  Keywords: ClassNotFoundException, autoload, info.xml, migration error, DI resolution, bootstrap, deprecated API, namespace, app not loading, class not found, migration fails, namespace error, app broken after update..
 license: MIT
 compatibility: "Designed for Claude Code. Requires Nextcloud 28+."
 metadata:

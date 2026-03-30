@@ -4,7 +4,7 @@ description: >
   Use when implementing file sharing, creating notifications, publishing activity events, or building collaboration features.
   Prevents incorrect share permission bitmasks, unregistered notifiers, and missing activity providers.
   Covers OCS Share API with share types and permissions, notification system with INotificationManager and INotifier, activity stream with IActivityManager, and push notifications.
-  Keywords: Share API, INotificationManager, INotifier, IActivityManager, permissions, share type, push notifications, activity.
+  Keywords: Share API, INotificationManager, INotifier, IActivityManager, permissions, share type, push notifications, activity, share files, notifications, activity feed, send notification, sharing permissions..
 license: MIT
 compatibility: "Designed for Claude Code. Requires Nextcloud 28+."
 metadata:

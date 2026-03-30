@@ -4,7 +4,7 @@ description: >
   Use when reading/writing files programmatically, listening to file events, or working with Nextcloud's filesystem abstraction.
   Prevents using deprecated Filesystem class, accessing files without proper user folder context, and missing NotFoundException handling.
   Covers Node API with IRootFolder and IUserFolder, File and Folder interfaces, file CRUD operations, file events (BeforeNodeCreated, NodeWritten, etc.), storage wrappers, versioning, and trash API.
-  Keywords: IRootFolder, IUserFolder, Node, File, Folder, getContent, putContent, NodeWritten, storage wrapper.
+  Keywords: IRootFolder, IUserFolder, Node, File, Folder, getContent, putContent, NodeWritten, storage wrapper, read file content, write file, file metadata, file events, file CRUD, storage..
 license: MIT
 compatibility: "Designed for Claude Code. Requires Nextcloud 28+."
 metadata:

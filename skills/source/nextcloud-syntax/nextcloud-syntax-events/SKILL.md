@@ -4,7 +4,7 @@ description: >
   Use when creating event listeners, dispatching events, hooking into file/user/share operations, or implementing cross-component communication.
   Prevents using deprecated hook system instead of typed events, and incorrect listener registration timing.
   Covers IEventDispatcher, typed events, IEventListener interface, event registration via IRegistrationContext, Before/After naming pattern, built-in event catalog, custom event creation, and frontend @nextcloud/event-bus.
-  Keywords: IEventDispatcher, IEventListener, IRegistrationContext, BeforeNodeCreated, NodeWritten, event-bus, typed events.
+  Keywords: IEventDispatcher, IEventListener, IRegistrationContext, BeforeNodeCreated, NodeWritten, event-bus, typed events, event listener, hook into action, on file upload, on user created, event bus, pub/sub..
 license: MIT
 compatibility: "Designed for Claude Code. Requires Nextcloud 28+."
 metadata:

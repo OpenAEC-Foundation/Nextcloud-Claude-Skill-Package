@@ -4,7 +4,7 @@ description: >
   Use when using occ commands, creating custom CLI commands, or administering Nextcloud from the command line.
   Prevents running occ as wrong user, missing command registration in info.xml, and forgetting maintenance mode.
   Covers built-in commands for maintenance, user management, app management, file scanning, and configuration, plus custom command development with Symfony Console.
-  Keywords: occ, php occ, maintenance:mode, app:enable, files:scan, Symfony Console, Command, info.xml commands.
+  Keywords: occ, php occ, maintenance:mode, app:enable, files:scan, Symfony Console, Command, info.xml commands, command line, terminal command, maintenance mode, enable app, scan files, CLI..
 license: MIT
 compatibility: "Designed for Claude Code. Requires Nextcloud 28+."
 metadata:

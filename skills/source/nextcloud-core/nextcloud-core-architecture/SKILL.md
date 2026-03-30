@@ -4,7 +4,7 @@ description: >
   Use when creating Nextcloud apps, understanding the platform architecture, or configuring dependency injection.
   Prevents misuse of IBootstrap phases, incorrect DI wiring, and violating the OCP interface contract.
   Covers PHP backend structure, Vue.js frontend layer, app lifecycle with IBootstrap register/boot phases, dependency injection with auto-wiring, service layer patterns, and key OCP interfaces.
-  Keywords: IBootstrap, register, boot, OCP, dependency injection, auto-wiring, service layer, Application.php.
+  Keywords: IBootstrap, register, boot, OCP, dependency injection, auto-wiring, service layer, Application.php, how Nextcloud works, app structure, DI container, lifecycle phases, getting started..
 license: MIT
 compatibility: "Designed for Claude Code. Requires Nextcloud 28+."
 metadata:

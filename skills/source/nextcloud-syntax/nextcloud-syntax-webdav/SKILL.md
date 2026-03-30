@@ -4,7 +4,7 @@ description: >
   Use when performing file operations via WebDAV, implementing chunked uploads, or querying file properties.
   Prevents incorrect DAV endpoint paths, missing Destination headers on MOVE/COPY, and broken chunked upload sequences.
   Covers DAV endpoint structure, file operations (PROPFIND/GET/PUT/MKCOL/MOVE/COPY/DELETE), property namespaces, special headers, chunked upload v2 protocol, and public share DAV access.
-  Keywords: WebDAV, PROPFIND, MKCOL, chunked upload, /remote.php/dav, OC-Chunked, Destination header.
+  Keywords: WebDAV, PROPFIND, MKCOL, chunked upload, /remote.php/dav, OC-Chunked, Destination header, WebDAV client, file sync, upload large file, PROPFIND, remote file access..
 license: MIT
 compatibility: "Designed for Claude Code. Requires Nextcloud 28+."
 metadata:

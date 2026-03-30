@@ -4,7 +4,7 @@ description: >
   Use when creating database tables, writing migrations, implementing entities and mappers, or building queries.
   Prevents Oracle column name violations, missing migration version numbering, and raw SQL instead of query builder.
   Covers migrations with ISchemaWrapper, Entity definitions with auto-generated getters/setters, QBMapper CRUD operations, query builder with joins and expressions, TTransactional trait, column types, and Oracle/Galera constraints.
-  Keywords: ISchemaWrapper, Entity, QBMapper, IQueryBuilder, migration, TTransactional, Oracle, Galera.
+  Keywords: ISchemaWrapper, Entity, QBMapper, IQueryBuilder, migration, TTransactional, Oracle, Galera, create table, database migration, entity, mapper, query builder, CRUD, SQL query..
 license: MIT
 compatibility: "Designed for Claude Code. Requires Nextcloud 28+."
 metadata:

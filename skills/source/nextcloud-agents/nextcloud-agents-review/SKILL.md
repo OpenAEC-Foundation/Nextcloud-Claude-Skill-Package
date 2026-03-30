@@ -4,7 +4,7 @@ description: >
   Use when reviewing Nextcloud app code, validating before deployment, or checking for common mistakes.
   Prevents deploying code with missing security attributes, incorrect DI patterns, and known anti-patterns.
   Covers controller security attributes, OCS endpoint patterns, database migration integrity, DI patterns, frontend import paths, CSRF handling, file API usage, and known anti-patterns.
-  Keywords: code review, validation, security attributes, anti-pattern, DI check, migration check, CSRF check, deployment.
+  Keywords: code review, validation, security attributes, anti-pattern, DI check, migration check, CSRF check, deployment, check my code, review before deploy, find mistakes, validate app quality..
 license: MIT
 compatibility: "Designed for Claude Code. Requires Nextcloud 28+."
 metadata:

@@ -4,7 +4,7 @@ description: >
   Use when implementing file manipulation features, building file-aware apps, or handling file lifecycle events.
   Prevents direct storage access bypassing the Node API, missing lock handling, and unhandled NotFoundException.
   Covers reading, writing, creating, deleting files and folders using the Node API, file search patterns, listening to file events, working with favorites, trash and versioning, and advanced storage access patterns.
-  Keywords: Node API, IRootFolder, getUserFolder, file search, favorites, trash, versioning, NotFoundException, lock.
+  Keywords: Node API, IRootFolder, getUserFolder, file search, favorites, trash, versioning, NotFoundException, lock, read file, write file, create folder, file events, file search, trash, versioning..
 license: MIT
 compatibility: "Designed for Claude Code. Requires Nextcloud 28+."
 metadata:

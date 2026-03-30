@@ -4,7 +4,7 @@ description: >
   Use when building a complete Nextcloud app, connecting PHP backend to Vue.js frontend, or implementing CRUD operations.
   Prevents skipping the service layer, tight coupling between controllers and database, and missing initial state bridge.
   Covers full-stack Nextcloud app development workflow including creating controllers with routes, implementing service layer with DI, database entities and mappers, Vue.js frontend with @nextcloud packages, initial state bridge between PHP and JavaScript, and the development lifecycle.
-  Keywords: full-stack, CRUD, service layer, initial state, routes.php, Vue.js, controller, mapper.
+  Keywords: full-stack, CRUD, service layer, initial state, routes.php, Vue.js, controller, mapper, build full app, connect frontend to backend, CRUD operations, full-stack tutorial..
 license: MIT
 compatibility: "Designed for Claude Code. Requires Nextcloud 28+."
 metadata:

@@ -4,7 +4,7 @@ description: >
   Use when encountering frontend build errors, runtime JavaScript errors, or API call failures from the browser.
   Prevents @nextcloud/* version mismatches with server, using deprecated OC global, and missing CSRF requesttoken.
   Covers Vue/Webpack build failures, @nextcloud/* import path issues, CORS problems, CSRF token failures, missing dialog styles, deprecated OC global usage, version mismatches between @nextcloud packages and Nextcloud server, and initial state loading errors.
-  Keywords: Webpack error, Vue build, @nextcloud version, OC global, CSRF, requesttoken, initial state, CORS, import path.
+  Keywords: Webpack error, Vue build, @nextcloud version, OC global, CSRF, requesttoken, initial state, CORS, import path, build fails, Vue error, import error, white screen, CSRF token missing, styles broken..
 license: MIT
 compatibility: "Designed for Claude Code. Requires Nextcloud 28+."
 metadata:

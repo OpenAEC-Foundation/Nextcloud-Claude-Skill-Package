@@ -4,7 +4,7 @@ description: >
   Use when implementing background processing, scheduling recurring tasks, or configuring cron.
   Prevents using AJAX cron in production, missing setInterval in TimedJob constructor, and unhandled job exceptions.
   Covers QueuedJob for one-time tasks, TimedJob for recurring tasks, IJobList for programmatic management, scheduleAfter for delayed execution, cron configuration modes, time sensitivity, and parallel run control.
-  Keywords: QueuedJob, TimedJob, IJobList, setInterval, scheduleAfter, cron, background job, webcron.
+  Keywords: QueuedJob, TimedJob, IJobList, setInterval, scheduleAfter, cron, background job, webcron, scheduled task, run in background, recurring job, cron job, async processing..
 license: MIT
 compatibility: "Designed for Claude Code. Requires Nextcloud 28+."
 metadata:
