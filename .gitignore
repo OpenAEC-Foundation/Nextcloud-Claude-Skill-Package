@@ -24,6 +24,11 @@ __pycache__/
 PROMPTS.md
 .claude/settings.local.json
 *.code-workspace
+CLAUDE.local.md
+*.local.md
+
+# MCP credentials (NEVER commit)
+mcp/credentials.json
 
 # Temp
 *.tmp
